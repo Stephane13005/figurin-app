@@ -1,0 +1,38 @@
+.social-icons {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.social-icons i {
+  padding: 20px;
+}
+
+.fa-facebook-square {
+  color: #0000ff;
+}
+
+.fa-twitter-square {
+  color: #1da1f2;
+}
+
+.fa-instagram-square {
+  color: transparent;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background: -webkit-radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}

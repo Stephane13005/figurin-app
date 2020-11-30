@@ -1,0 +1,31 @@
+.figurines {
+  font-size: 36px;
+  padding: 10px 10px;
+  border-radius: 25px;
+  background: #008891;
+  border: 2px solid black;
+  text-align: center;
+  width: 230px;
+  margin: 120px auto;
+}
+.banner {
+  margin-bottom: 70px;
+}
+.banner a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-primary {
+  font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background: #008891;
+  transition: background 0.3s ease;
+  border: 2px solid white;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: #0f3057;
+}
