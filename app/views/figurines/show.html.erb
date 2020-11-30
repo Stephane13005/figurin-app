@@ -1,2 +1,39 @@
-<h1><%= @figurine.name %></h1>
+<div class="container">
+    <div class="card-trip">
+        <h1 class="text-center"><%= @figurine.name %></h1>
+        <img src="<%=  %>" />
+    
+        <div class="card-trip-infos">
+            <div>
+                <p>Year : <%= @figurine.year %></p>
+                <p>Brand : <%= @figurine.brand %></p>
+                <hr>
+                <h3>Description :</h3>
+                <p>Parfait état, dans son emballage d'origine.</p>
+            </div>
+        </div>
+        <hr>
 
+        <div class="text-center">
+            <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
+            <button type="button" class="btn btn-primary btn-sm">👍</button>
+            <button type="button" class="btn btn-primary btn-sm">💬</button>
+            <button type="button" class="btn btn-primary btn-sm">⭐</button>
+        </div>
+        <hr>
+
+        <div>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Collector</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Media</button>
+        </div>
+    </div>
+  <br>
+  <br>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Comments</button>
+    <div class="card-trip">
+        <h4>username</h4>
+        <div class="card-trip-infos">
+            <p>Trop choupi ce Han-Solo !!!</p>
+        </div>
+    </div>
+</div>
