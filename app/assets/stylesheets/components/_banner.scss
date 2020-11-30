@@ -1,0 +1,48 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 130px;
+  line-height: 208px;
+  text-align: center;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: white;
+}
+
+#month {
+  margin-bottom: 100px;
+}
+
+.apropos {
+  max-width: 600px;
+}
+
+#apropos,
+#contact,
+#month {
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  background-color: #00587a;
+  width: 200px;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-top: 100px;
+  color: white;
+}
+
+#month {
+  width: 250px;
+}
