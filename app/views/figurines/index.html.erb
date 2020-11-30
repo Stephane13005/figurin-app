@@ -1,0 +1,12 @@
+<div class="container">
+	<h1>Figurines list</h1>
+	<% @figurines.each do |figurine| %>
+<ul>
+	<li> <%= link_to figurine.name, figurine_path(figurine) %> - <%= figurine.year %></li>
+</ul>
+<% end %>
+
+
+</div>
+
+
