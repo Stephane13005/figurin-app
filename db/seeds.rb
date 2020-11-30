@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Creating users"
+User.create!(email:"toto@gmail.com", password: "toto13")
+User.create!(email:"titi@gmail.com", password: "titi13")
+User.create!(email:"tutu@gmail.com", password: "tutu13")
+puts "Creating users ok !"
+
+puts "Creating figurines"
+Figurine.create!(name: "Han Solo", year: 1977, brand: "Kenner" , description: "Good shape", like: 0, user_id: 2)
+Figurine.create!(name: "Luke Skywalker", year: 1977, brand: "Kenner" , description: "Good shape", like: 0, user_id: 3)
+Figurine.create!(name: "Baby Yoda", year: 2019, brand: "Funko Pop" , description: "New", like: 0, user_id: 1)
+puts "Creating figurines ok !"
