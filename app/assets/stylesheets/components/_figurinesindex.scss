@@ -1,4 +1,6 @@
 .cards {
+  padding: 75px;
+  margin:0px 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -40,4 +42,8 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.ul{
+ visibility: hidden;
 }

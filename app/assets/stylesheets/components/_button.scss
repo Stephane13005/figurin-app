@@ -29,3 +29,24 @@
 .btn-primary:hover {
   background: #0f3057;
 }
+
+.btn-return a {
+
+  text-decoration: none;
+  color: white;
+}
+
+.btn-return{
+  margin: left 20px;
+  font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background: #008891;
+  transition: background 0.3s ease;
+  border: 2px solid white;
+  text-align: center;
+}
+
+.btn-return:hover {
+  background: #0f3057;
+}
