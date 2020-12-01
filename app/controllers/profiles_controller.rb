@@ -6,10 +6,10 @@ class ProfilesController < ApplicationController
   def profile
     if current_user.profile
       @profile = current_user.profile
+      @figurines = current_user.figurines
     else
       @profile = Profile.create(user: current_user)
     end
-    console
   end
 
   def update
