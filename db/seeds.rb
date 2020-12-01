@@ -12,7 +12,7 @@ User.create!(email:"tutu@gmail.com", password: "tutu13")
 puts "Creating users ok !"
 
 puts "Creating figurines"
-Figurine.create!(name: "Han Solo", year: 1977, brand: "Kenner" , description: "Good shape", like: 0, user_id: 2)
-Figurine.create!(name: "Luke Skywalker", year: 1977, brand: "Kenner" , description: "Good shape", like: 0, user_id: 3)
-Figurine.create!(name: "Baby Yoda", year: 2019, brand: "Funko Pop" , description: "New", like: 0, user_id: 1)
+Figurine.create!(name: "Han Solo", year: 1977, brand: "Kenner" , description: "Good shape", user_id: 2)
+Figurine.create!(name: "Luke Skywalker", year: 1977, brand: "Kenner" , description: "Good shape", user_id: 3)
+Figurine.create!(name: "Baby Yoda", year: 2019, brand: "Funko Pop" , description: "New", user_id: 1)
 puts "Creating figurines ok !"
