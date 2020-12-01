@@ -1,10 +1,15 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="align-left">
-    <%= link_to "Home", root_path, class: "navbar-brand"%>
-    <%= link_to "About us", root_path(anchor:"apropos"), class: "navbar-brand"%>
-    <%= link_to "Contact", root_path(anchor:"contact"), class: "navbar-brand"%>
+<div class="site-container">
+  <div class="site-pusher">
+    <a href="#" class="header__icon" id="header__icon"></a>
+    <div class="navbar navbar-lewagon">
+      <%= image_tag("logo.png", height: '100', width: '100')  %>
+      <%= link_to "Home", root_path, class: "navbar-brand"%>
+      <%= link_to "About us", root_path(anchor:"apropos"), class: "navbar-brand"%>
+      <%= link_to "Contact", root_path(anchor:"contact"), class: "navbar-brand"%>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
   </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 </div>
+<div class="site-cache" id="site-cache"></div>

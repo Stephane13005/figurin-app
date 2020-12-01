@@ -19,6 +19,7 @@
   -webkit-text-stroke-color: white;
 }
 
+// Titres et bouton dans la home page
 #month {
   margin-bottom: 100px;
 }
@@ -45,4 +46,62 @@
 
 #month {
   width: 250px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+  .banner h1 {
+    font-size: 50px;
+    line-height: 80px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+  .banner h1 {
+    font-size: 80px;
+    line-height: 100px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    height: 100vh;
+  }
 }
