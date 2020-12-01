@@ -9,16 +9,13 @@
 <p>City : <%= @profile.city %></p>
 <p>Email : <%= @profile.user.email %> </p>
 <%= link_to "Add a figurine", new_figurine_path %>
+<hr>
+<h2>My trophies</h2>
 
 	<div class="cards">
-		<% if @figurines.nil? %>
-
-		<% else %>
-    	<% @figurines.each do |figurine| %>
-
+    	<% @profile.user.figurines.each do |figurine| %>
 		<ul>
 		  <div class="container">
-
           <div class="row">
             <div class="">
               <div class="card  box-shadow">
@@ -37,12 +34,15 @@
 			</div>
 		</ul>
 		<% end %>
-			<% end %>
 			</div>
+<hr>
+<h2>My favorite figurines</h2>
 
+
+<hr>
 <div class="container">
 	
-<h1 id="edit_infos">Edit your informations</h1>
+<h2 id="edit_infos">Edit your informations</h2>
 
 <%= simple_form_for @profile, method: :patch do |f| %>
     <%= f.input :firstname %>
@@ -55,7 +55,4 @@
       <%= f.submit %>
     </div>
   <% end %>
-
-
-
 </div>
