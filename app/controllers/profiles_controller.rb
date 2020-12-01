@@ -9,7 +9,6 @@ class ProfilesController < ApplicationController
     else
       @profile = Profile.create(user: current_user)
     end
-    console
   end
 
   def update
