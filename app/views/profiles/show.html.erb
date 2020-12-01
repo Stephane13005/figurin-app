@@ -1,18 +1,19 @@
 <div class="container">
+<% if @user.profile.nil? %>
+<h1>This collector didn't give us any infos about him ! Sorry !</h1>
+<% else %>
+<h1>Welcome on <%= @user.profile.username %> !</h1> 
 
-<h1> Welcome <%= @profile.username  %> !</h1>
-<% if @profile.photo.attached? %>
+<% if @user.profile.photo.attached? %>
 <p> <%= cl_image_tag @profile.photo.key, :width => 400, :crop => "fill" %></p>
 <% end %>
-<p><%= @profile.firstname %> <%= @profile.lastname %></p>
-<p>Date of birth : <%= @profile.birthdate %></p>
-<p>City : <%= @profile.city %></p>
-<p>Email : <%= @profile.user.email %> </p>
-<%= link_to "Add a figurine", new_figurine_path %>
+<p>Date of birth : <%= @user.profile.birthdate %></p>
+<p>City : <%= @user.profile.city %></p>
+
 
 	<div class="cards">
-		<% if @figurines.nil? %>
-
+		<% if @user.figurines.nil? %>
+			<p>This user has no figurines !</p>
 		<% else %>
     	<% @figurines.each do |figurine| %>
 
@@ -40,22 +41,6 @@
 			<% end %>
 			</div>
 
-<div class="container">
-	
-<h1 id="edit_infos">Edit your informations</h1>
 
-<%= simple_form_for @profile, method: :patch do |f| %>
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.input :username %>
-    <%= f.date_field :birthdate %>
-    <%= f.input :city %>
-    <%= f.input :photo, as: :file %>
-    <div class="form-actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-
-
-
+<% end %>
 </div>
