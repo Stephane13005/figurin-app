@@ -4,7 +4,7 @@
 <% else %>
 <h1>Welcome on <%= @user.profile.username %> !</h1> 
 
-<% if @user.profile.photo.attached? %>
+<% if @user.profile.photo.attached?%>
 <p> <%= cl_image_tag @profile.photo.key, :width => 400, :crop => "fill" %></p>
 <% end %>
 <p>Date of birth : <%= @user.profile.birthdate %></p>

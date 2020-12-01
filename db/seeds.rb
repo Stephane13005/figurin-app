@@ -16,3 +16,12 @@ Figurine.create!(name: "Han Solo", year: 1977, brand: "Kenner" , description: "G
 Figurine.create!(name: "Luke Skywalker", year: 1977, brand: "Kenner" , description: "Good shape", user_id: 3)
 Figurine.create!(name: "Baby Yoda", year: 2019, brand: "Funko Pop" , description: "New", user_id: 1)
 puts "Creating figurines ok !"
+
+puts "Creating profiles"
+Profile.create!(firstname: "Léo", lastname: "Vinci", city: "Roma", user_id: 1 )
+Profile.create!(firstname: "Manu", lastname: "Tudescends", city: "Paris", user_id: 2)
+Profile.create!(firstname: "Matt", lastname: "Pokora", city: "Marseille", user_id: 3)
+puts "Creating profiles ok"
+
+
+
