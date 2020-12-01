@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="text-center">
 	<h1>Figurines list</h1>
 
 	<hr>
@@ -8,14 +8,15 @@
 		<button type="submit" class="btn btn-primary btn-lg">Filter</button>
 	</div>
 
+
 	<hr>
 
 	<div class="cards">
     	<% @figurines.each do |figurine| %>
 
 		<ul>
-		  <div class="container">
 
+		  <div class="container">
           <div class="row">
             <div class="">
               <div class="card  box-shadow">
@@ -32,13 +33,16 @@
               </div>
             </div>
 			</div>
-			
-			
+
+
+
 		</ul>
 		<% end %>
 		<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-			
-
-
-	</div>
+  </div>
 </div>
+
+  <div class="cards text-left">
+    <btn class="btn btn-return " ></i><%= link_to "return", root_path %></btn>
+  </div>
+
