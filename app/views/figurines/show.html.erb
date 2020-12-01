@@ -7,7 +7,7 @@
       <p>Brand : <%= @figurine.brand %></p>
       <hr>
       <h3>Description :</h3>
-      <p>Parfait état, dans son emballage d'origine.</p>
+      <p><%= @figurine.description %>.</p>
     </div>
   </div>
   <hr>
@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="container text-center fig">
-  <button type="button" class="btn btn-primary coll">Collector</button>
+  <button type="button" class="btn btn-primary coll"><%= link_to "Collector", profile_path(@figurine.user) %></button>
   <button type="button" class="btn btn-primary media">Media</button>
 </div>
 <br>
