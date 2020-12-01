@@ -62,10 +62,30 @@
   margin: 50px auto;
 }
 
+.card-trip .btn-primary {
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+  border: 2px solid white;
+  text-align: center;
+  text-decoration: none;
+}
+.card-trip .btn-primary:hover {
+  background: #0f3057;
+  color: white;
+}
+
 .coll {
   background: #008891;
 }
 
 .media {
   background: #00587a;
+}
+
+.comm {
+  background: #e7e7de;
 }
