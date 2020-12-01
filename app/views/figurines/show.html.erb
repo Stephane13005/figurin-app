@@ -1,6 +1,10 @@
 <div class="container card-trip">
   <h1 class="text-center"><%= @figurine.name %></h1>
-  <img src="<%=  %>" />
+    <% if @figurine.photo.attached? %>
+                <%= cl_image_tag(@figurine.photo.key, :width => 100) %>
+                <% else %>
+                <%= image_tag("logo.png", size: "100x100") %>
+                <% end %>
   <div class="card-trip-infos">
     <div>
       <p>Year : <%= @figurine.year %></p>

@@ -2,10 +2,10 @@
 <% if @user.profile.nil? %>
 <h1>This collector didn't give us any infos about him ! Sorry !</h1>
 <% else %>
-<h1>Welcome on <%= @user.profile.username %> !</h1> 
+<h1>Welcome on <%= @user.profile.username %> profile page !</h1> 
 
 <% if @user.profile.photo.attached?%>
-<p> <%= cl_image_tag @profile.photo.key, :width => 400, :crop => "fill" %></p>
+<p> <%= cl_image_tag @user.profile.photo.key, :width => 400, :crop => "fill" %></p>
 <% end %>
 <p>Date of birth : <%= @user.profile.birthdate %></p>
 <p>City : <%= @user.profile.city %></p>
@@ -15,7 +15,7 @@
 		<% if @user.figurines.nil? %>
 			<p>This user has no figurines !</p>
 		<% else %>
-    	<% @figurines.each do |figurine| %>
+    	<% @user.figurines.each do |figurine| %>
 
 		<ul>
 		  <div class="container">
@@ -28,8 +28,6 @@
                   <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %> - <%= figurine.year %></p>
                   <div class="align-items-center">
                     <div class="text-center">
-                      <%= link_to "Edit", edit_figurine_path(figurine) %> | 
-                      <%= link_to "Delete", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
                     </div>
                   </div>
                 </div>
