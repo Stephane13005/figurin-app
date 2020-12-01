@@ -8,6 +8,34 @@
 <p>Date of birth : <%= @profile.birthdate %></p>
 <p>City : <%= @profile.city %></p>
 
+<%= link_to "Add a figurine", new_figurine_path %>
+
+	<div class="cards">
+    	<% @figurines.each do |figurine| %>
+
+		<ul>
+		  <div class="container">
+
+          <div class="row">
+            <div class="">
+              <div class="card  box-shadow">
+              	<%= cl_image_tag(figurine.photo.key, :width => 100) %>
+                <div class="card-body">
+                  <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %> - <%= figurine.year %></p>
+                  <div class="align-items-center">
+                    <div class="text-center">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">⭐</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">👍</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+			</div>			
+		</ul>
+		<% end %>
+			</div>
+
 
 <h1 id="edit">Edit your informations</h1>
 
