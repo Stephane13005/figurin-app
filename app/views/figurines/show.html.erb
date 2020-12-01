@@ -1,40 +1,36 @@
-<div class="container">
-    <div class="card-trip">
-        <h1 class="text-center"><%= @figurine.name %></h1>
-        <img src="<%=  %>" />
-    
-        <div class="card-trip-infos">
-            <div>
-                <p>Year : <%= @figurine.year %></p>
-                <p>Brand : <%= @figurine.brand %></p>
-                <hr>
-                <h3>Description :</h3>
-                <p>Parfait état, dans son emballage d'origine.</p>
-            </div>
-        </div>
-        <hr>
 
-        <div class="text-center">
-            <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
-            <button type="button" class="btn btn-primary btn-sm">👍</button>
-            <button type="button" class="btn btn-primary btn-sm">💬</button>
-            <button type="button" class="btn btn-primary btn-sm">⭐</button>
-        </div>
-        <hr>
-
-        <div>   <div class="btn btn-primary btn-lg btn-block">
-                <%= link_to "Collector", profile_path(@figurine.user), :class => "btn" %>
-            </div>
-         <button type="button" class="btn btn-primary btn-lg btn-block">Media</button>
-        </div>
+<div class="container card-trip">
+  <h1 class="text-center"><%= @figurine.name %></h1>
+  <img src="<%=  %>" />
+  <div class="card-trip-infos">
+    <div>
+      <p>Year : <%= @figurine.year %></p>
+      <p>Brand : <%= @figurine.brand %></p>
+      <hr>
+      <h3>Description :</h3>
+      <p>Parfait état, dans son emballage d'origine.</p>
     </div>
-  <br>
-  <br>
-  <button type="button" class="btn btn-primary btn-lg btn-block">Comments</button>
-    <div class="card-trip">
-        <h4>username</h4>
-        <div class="card-trip-infos">
-            <p>Trop choupi ce Han-Solo !!!</p>
-        </div>
-    </div>
+  </div>
+  <hr>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
+    <button type="button" class="btn btn-primary btn-sm">👍</button>
+    <button type="button" class="btn btn-primary btn-sm">💬</button>
+    <button type="button" class="btn btn-primary btn-sm">⭐</button>
+  </div>
+</div>
+<div class="container text-center fig">
+  <button type="button" class="btn btn-primary coll">Collector</button>
+  <button type="button" class="btn btn-primary media">Media</button>
+</div>
+<br>
+<br>
+<div class="container text-center fig">
+  <button type="button" class="btn btn-primary">Comments</button>
+</div>
+<div class="container card-trip">
+  <h4>username</h4>
+  <div class="card-trip-infos">
+    <p>Trop choupi ce Han-Solo !!!</p>
+  </div>
 </div>
