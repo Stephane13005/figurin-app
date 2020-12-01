@@ -23,6 +23,22 @@ class FigurinesController < ApplicationController
     end
   end
 
+  def edit
+    @figurine = Figurine.find(params[:id])
+  end
+
+  def update
+    @figurine = Figurine.find(params[:id])
+    @figurine.update(figurine_params)
+    redirect_to "/profile"
+  end
+
+  def destroy
+    @figurine = Figurine.find(params[:id])
+    @figurine.destroy
+    redirect_to "/profile"
+  end
+
   private
 
   def figurine_params
