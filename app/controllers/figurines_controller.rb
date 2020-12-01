@@ -1,9 +1,11 @@
 class FigurinesController < ApplicationController
-	def index
-		@figurines = Figurine.all
-	end 
+  skip_before_action :authenticate_user!, only: %i[index show]
 
-	def show
-		@figurine = Figurine.find(params[:id])
-	end
+  def index
+    @figurines = Figurine.all
+  end
+
+  def show
+    @figurine = Figurine.find(params[:id])
+  end
 end
