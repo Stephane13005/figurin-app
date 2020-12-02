@@ -1,15 +1,13 @@
-<div class="container">
-    <h1>Add a figurine</h1>
-
-<%= simple_form_for @figurine do |f| %>
+<div class="container form">
+  <h1>Add a figurine</h1>
+  <%= simple_form_for @figurine do |f| %>
     <%= f.input :name %>
     <%= f.input :year %>
     <%= f.input :brand %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <div class="form-actions">
-      <%= f.submit %>
+      <%= f.button :submit %>
     </div>
   <% end %>
 </div>
-
