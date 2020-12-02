@@ -1,11 +1,15 @@
 <div class="text-center">
   <h1>Figurines list</h1>
   <hr>
-  <div class="button">
-    <button type="submit" class="btn btn-primary btn-lg">Search</button>
-    <button type="submit" class="btn btn-primary btn-lg">Filter</button>
+  <div class="container text-center">
+    <div class="search">
+      <%= simple_form_for :figurines_filter, url: figurines_path(anchor:"fig-list"), method: :get do |f| %>
+        <%= f.input :search, label: false, value: params.dig(:figurines_filter, :search) %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-  <div class="cards container">
+  <div class="cards container" id="fig-list">
     <% @figurines.each do |figurine| %>
       <ul>
         <div class="card-category container box-shadow">

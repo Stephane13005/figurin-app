@@ -2,7 +2,11 @@ class FigurinesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @figurines = Figurine.all
+    if params[:figurines_filter].present?
+      @figurines = Figurine.search_by(params[:figurines_filter][:search])
+    else
+      @figurines = Figurine.all
+    end
   end
 
   def show
