@@ -15,7 +15,7 @@ class FigurinesController < ApplicationController
 
   def media
     figurine = Figurine.find(params[:id])
-    fetch_media(figurine.media_universe, figurine.year)
+    fetch_media(figurine.media_universe, figurine.media_year)
   end
 
   def fetch_media(title, year)
