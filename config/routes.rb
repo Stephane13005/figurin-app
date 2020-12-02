@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   		get 'media'
   	end
   end
-  resources :profiles, only: [:show, :update]
+  resources :profiles, only: [:index, :show, :update]
   get '/profile', to: 'profiles#profile'
 end
