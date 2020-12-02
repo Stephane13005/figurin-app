@@ -24,6 +24,7 @@ class FigurinesController < ApplicationController
     @movie_plot = parsed_movie['Plot']
     @movie_director = parsed_movie['Director']
     @movie_actors = parsed_movie['Actors']
+    @movie_rating = parsed_movie['imdbRating']
   end
 
   def new
@@ -59,6 +60,6 @@ class FigurinesController < ApplicationController
   private
 
   def figurine_params
-    params.require(:figurine).permit(:name, :description, :year, :brand, :photo)
+    params.require(:figurine).permit(:name, :description, :year, :brand, :media_universe, :media_year, :photo)
   end
 end
