@@ -9,6 +9,24 @@ class FigurinesController < ApplicationController
     @figurine = Figurine.find(params[:id])
   end
 
+  def media
+    figurine = Figurine.find(params[:id])
+    fetch_media(figurine.media_universe, figurine.year)
+  end
+
+  def fetch_media(title, year)
+    url = "http://www.omdbapi.com/?apikey=#{ENV['OMDB_API_KEY']}&t=#{title}&y=#{year}".to_s
+    response = open(url).read
+    parsed_movie = JSON.parse(response)
+    @movie_title = parsed_movie['Title']
+    @movie_year = parsed_movie['Released']
+    @movie_poster = parsed_movie['Poster']
+    @movie_plot = parsed_movie['Plot']
+    @movie_director = parsed_movie['Director']
+    @movie_actors = parsed_movie['Actors']
+    @movie_rating = parsed_movie['imdbRating']
+  end
+
   def new
     @figurine = Figurine.new
   end
@@ -42,6 +60,6 @@ class FigurinesController < ApplicationController
   private
 
   def figurine_params
-    params.require(:figurine).permit(:name, :description, :year, :brand, :photo)
+    params.require(:figurine).permit(:name, :description, :year, :brand, :media_universe, :media_year, :photo)
   end
 end
