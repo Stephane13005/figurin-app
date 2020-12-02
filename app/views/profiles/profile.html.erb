@@ -1,11 +1,6 @@
 
 <div id="contenu">
-  <% if @user.nil? %>
-    <h1 class="text-center">This collector didn't give us any infos about him ! Sorry !</h1>
-  <% else %>
-    <h1 class="text-center">Welcome on <%= @user.profile.username %> profile page !</h1>
-  <%= link_to "Add a figurine", new_figurine_path %>
-  <% end %>
+<h1 class="text-center">Welcome <%= @user.profile.username %> !</h1>
     <div id="gauche">
 
     <br>
@@ -15,7 +10,7 @@
     <div class="containeruser">
       <div class="user text-center" >
         <div class="card card-profile shadow">
-          <h2 class="text-center"><strong>USER NAME</strong></h2>
+          <h2 class="text-center"><strong><%= @profile.username %></strong></h2>
             <div class="columns">
                 <div class="userimage text-center">
                   <% if @profile.photo.attached?%>
@@ -30,10 +25,10 @@
 
                           </h5>
                       <div class="h5 font-weight-300">
-                              <p>City :<%= @profile.city%></p>
+                              <p>City : <%= @profile.city%></p>
                       </div>
                           <div class="h5 font-weight-300">
-                              <p>Email :<%=@profile.user.email%></p>
+                              <p>Email : <%=@profile.user.email%></p>
                           </div>
                         </div>
                       </div>
@@ -41,6 +36,9 @@
                     </div>
                   </div>
                 </div>
+                <div class="text-center">
+                <button type="button" class=" btn btn-primary coll"><%= link_to "Add a figurine", new_figurine_path %></button>
+               </div>
               </div>
 
 <div id="droite">
