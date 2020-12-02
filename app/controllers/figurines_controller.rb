@@ -15,7 +15,9 @@ class FigurinesController < ApplicationController
   end
 
   def fetch_media(title, year)
-    url = "http://www.omdbapi.com/?apikey=#{ENV['OMDB_API_KEY']}&t=#{title}&y=#{year}".to_s
+    require 'open-uri'
+    require 'json'
+    url = "http://www.omdbapi.com/?apikey=#{ENV['OMDB_API_KEY']}&t=#{title}&y=#{year}"
     response = open(url).read
     parsed_movie = JSON.parse(response)
     @movie_title = parsed_movie['Title']
