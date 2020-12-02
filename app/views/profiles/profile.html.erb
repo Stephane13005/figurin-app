@@ -1,28 +1,26 @@
 <div class="container">
-
-<h1> Welcome <%= @profile.username  %> !</h1>
-<% if @profile.photo.attached? %>
-<p> <%= cl_image_tag @profile.photo.key, :width => 400, :crop => "fill" %></p>
-<% end %>
-<p><%= @profile.firstname %> <%= @profile.lastname %></p>
-<p>Date of birth : <%= @profile.birthdate %></p>
-<p>City : <%= @profile.city %></p>
-<p>Email : <%= @profile.user.email %> </p>
-<%= link_to "Add a figurine", new_figurine_path %>
-<hr>
-<h2>My trophies</h2>
-
-	<div class="cards">
-    	<% @profile.user.figurines.each do |figurine| %>
-		<ul>
-		  <div class="container">
+  <h1> Welcome <%= @profile.username  %> !</h1>
+  <% if @profile.photo.attached? %>
+    <p> <%= cl_image_tag @profile.photo.key, :width => 400, :crop => "fill" %></p>
+  <% end %>
+  <p><%= @profile.firstname %> <%= @profile.lastname %></p>
+  <p>Date of birth : <%= @profile.birthdate %></p>
+  <p>City : <%= @profile.city %></p>
+  <p>Email : <%= @profile.user.email %> </p>
+  <%= link_to "Add a figurine", new_figurine_path %>
+  <hr>
+  <h2>My trophies</h2>
+  <div class="cards">
+    <% @profile.user.figurines.each do |figurine| %>
+      <ul>
+        <div class="container">
           <div class="row">
             <div class="">
               <div class="card  box-shadow">
-              	   <% if figurine.photo.attached? %>
-                <%= cl_image_tag(figurine.photo.key, :width => 100) %>
+                <% if figurine.photo.attached? %>
+                  <%= cl_image_tag(figurine.photo.key, :width => 100) %>
                 <% else %>
-                <%= image_tag("logo.png", size: "100x100") %>
+                  <%= image_tag("logo.png", size: "100x100") %>
                 <% end %>
                 <div class="card-body">
                   <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %> - <%= figurine.year %></p>
@@ -35,28 +33,24 @@
                 </div>
               </div>
             </div>
-			</div>
-		</ul>
-		<% end %>
-			</div>
-<hr>
-<h2>My favorite figurines</h2>
-
-
-<hr>
-<div class="container">
-	
-<h2 id="edit_infos">Edit your informations</h2>
-
-<%= simple_form_for @profile, method: :patch do |f| %>
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.input :username %>
-    <%= f.date_field :birthdate %>
-    <%= f.input :city %>
-    <%= f.input :photo, as: :file %>
-    <div class="form-actions">
-      <%= f.submit %>
+          </div>
+        </ul>
+      <% end %>
     </div>
-  <% end %>
-</div>
+    <hr>
+    <h2>My favorite figurines</h2>
+    <hr>
+    <div class="container form">
+      <h2 id="edit_infos">Edit your informations</h2>
+      <%= simple_form_for @profile, method: :patch do |f| %>
+        <%= f.input :firstname %>
+        <%= f.input :lastname %>
+        <%= f.input :username %>
+        <%= f.date_field :birthdate %>
+        <%= f.input :city %>
+        <%= f.input :photo, as: :file %>
+        <div class="form-actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
