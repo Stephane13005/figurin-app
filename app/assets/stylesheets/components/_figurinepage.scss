@@ -2,10 +2,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 50px;
-  margin-bottom:50px;
-  gap:70px 20px;
+  margin-bottom: 50px;
+  padding: 10px;
+  grid-gap: 16px;
 }
 
+.cards ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.ul {
+  visibility: hidden;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -42,9 +51,9 @@
 }
 
 .card-category {
-  padding-bottom:30px;
+  padding: 5px;
   height: 300px;
-  width: 320px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,35 +62,34 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .card-category:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
-
+.cards a:hover {
+  text-decoration: none;
+}
 .card-category a {
   text-decoration: none;
 }
 
-.cards .card-category {
-  padding: auto;
-  margin: 20px auto;
-}
-
 .card-trip {
   margin-top: 60px;
-  width: 900px;
+  width: 700px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-trip > img {
-  height: 400px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-trip h2 {
@@ -109,7 +117,4 @@
   right: 16px;
   top: -20px;
   width: 40px;
-}
-.cards a:hover {
-  text-decoration: none;
 }
