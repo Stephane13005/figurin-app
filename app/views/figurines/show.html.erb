@@ -19,7 +19,7 @@
   <div class="text-center">
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
     <button type="button" class="btn btn-primary btn-sm">👍</button>
-    <button type="button" class="btn btn-primary btn-sm">💬</button>
+    <button type="button" class="btn btn-primary btn-sm"><%= link_to '💬', figurine_path(anchor:"postreview")%></button>
     <button type="button" class="btn btn-primary btn-sm">⭐</button>
   </div>
 </div>
@@ -31,10 +31,23 @@
 <br>
 <div class="container text-center fig">
   <button type="button" class="btn btn-primary comm">Comments</button>
-</div>
-<div class="container card-trip">
-  <h4>username</h4>
+ <% if @figurine.reviews.blank? %>
+      <p>Be the first to leave a review for <%= @figurine.name %> figurine !</p>
+    <% else %>
+      <% @figurine.reviews.each do |review| %>
+<div  id="postreview" class="container card-trip">
+  <h4><%= review.user.profile.username %></h4>
+  <p><%= review.created_at %> </p>
   <div class="card-trip-infos">
-    <p>Trop choupi ce Han-Solo !!!</p>
+    <p><%= review.content %> </p>
   </div>
+  <% end %>
+   <% end %>
+</div>
+ <% if policy(@review).create? %>
+<%= simple_form_for([ @figurine, @review ]) do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+<% end %>
 </div>
