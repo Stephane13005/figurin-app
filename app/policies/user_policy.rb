@@ -5,8 +5,7 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-def home?
-	true
-end
-
+  def profile?
+  	true
+  end
 end

@@ -8,6 +8,23 @@
   width: 230px;
   margin: 120px auto;
 }
+
+.collectors {
+  font-size: 36px;
+  padding: 10px 10px;
+  border-radius: 25px;
+  background: #008891;
+  border: 2px solid black;
+  text-align: center;
+  width: 230px;
+  margin: 120px auto;
+}
+
+.collectors a {
+  text-decoration: none;
+  color: white;
+}
+
 .banner {
   margin-bottom: 70px;
 }
@@ -80,16 +97,17 @@
 
 .coll {
   background: #008891;
-  text-decoration: none;
 }
 
-.coll a {
+.coll a,
+.media a {
   text-decoration: none;
   color: white;
 }
 
 .media {
   background: #00587a;
+  text-decoration: none;
 }
 
 .comm {

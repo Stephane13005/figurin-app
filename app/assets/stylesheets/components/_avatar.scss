@@ -1,6 +1,7 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+
 }
 .avatar-large {
   width: 56px;
@@ -9,12 +10,34 @@
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
 .avatar-square {
   width: 40px;
   border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
+
+.user{
+  width: 400px 800px;
+  border-radius: 50%;
+}
+.userimage img {
+  position: absolute;
+  bottom: 118px;
+  border-radius: 50%;
+  margin-left: -280px;
+}
+h2 {
+  font-family: Bangers, cursive;
+  color: #008891;
+}
+
+.nav-item .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+

@@ -5,8 +5,8 @@ class ProfilePolicy < ApplicationPolicy
     end
   end
 
-  def profile?
-  	is_owner?
+  def create?
+  	true
   end
 
 private
