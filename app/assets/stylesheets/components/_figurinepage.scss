@@ -1,9 +1,8 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 50px;
-  margin-bottom:50px;
-  gap:70px 20px;
+  grid-gap: 16px;
+  padding-top: 50px;
 }
 
 // Smallest device
@@ -42,9 +41,10 @@
 }
 
 .card-category {
-  padding-bottom:30px;
-  height: 300px;
-  width: 320px;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,8 +66,8 @@
 }
 
 .cards .card-category {
-  padding: auto;
-  margin: 20px auto;
+  padding: 50px;
+  margin: 30px auto;
 }
 
 .card-trip {
