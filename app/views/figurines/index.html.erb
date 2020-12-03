@@ -2,10 +2,14 @@
   <h1>Figurines list</h1>
   <hr>
   <div class="container text-center">
-    <div class="search">
-      <%= simple_form_for :figurines_filter, url: figurines_path(anchor:"fig-list"), method: :get do |f| %>
-        <%= f.input :search, label: false, value: params.dig(:figurines_filter, :search) %>
-        <%= f.submit "Search", class: "btn btn-primary" %>
+    <div class="search container text-center">
+      <%= form_tag figurines_path(anchor:"fig-list"), method: :get do %>
+        <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a figurine"
+  %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
@@ -22,7 +26,8 @@
               <% end %>
             </div>
             <div class="card-body">
-              <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %> - <%= figurine.year %></p>
+              <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
+              <p class="card-text"><%= figurine.year %></p>
               <div class="align-items-center">
                 <div class="text-center">
                   <button type="button" class="btn btn-sm btn-outline-secondary">⭐</button>
@@ -33,6 +38,6 @@
           </ul>
         <% end %>
       </div>
-      <div class="cards container">
-        <btn class="btn btn-return"></i><%= link_to "return", root_path %></btn>
+      <div class="container text-center fig">
+        <button type="button" class="btn btn-primary coll"></i><%= link_to "return", root_path %></button>
     </div>
