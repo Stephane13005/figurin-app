@@ -6,6 +6,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def profile?
-  	true
+    true
   end
 end

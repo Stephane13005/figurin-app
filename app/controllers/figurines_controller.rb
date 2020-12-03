@@ -1,7 +1,7 @@
 class FigurinesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show media]
-  after_action :verify_authorized, except: [:index, :show, :media], unless: :devise_controller?
-  after_action :verify_policy_scoped, except: [:index, :show, :media], unless: :devise_controller?
+  after_action :verify_authorized, except: %i[index show media], unless: :devise_controller?
+  after_action :verify_policy_scoped, except: %i[index show media], unless: :devise_controller?
 
   def index
     @figurines = policy_scope(Figurine).order(created_at: :desc)
@@ -67,7 +67,7 @@ class FigurinesController < ApplicationController
   end
 
   def destroy
-     @figurine = policy_scope(Figurine).find(params[:id])
+    @figurine = policy_scope(Figurine).find(params[:id])
     authorize @figurine
     @figurine.destroy
     redirect_to "/profile"

@@ -1,4 +1,6 @@
 class Figurine < ApplicationRecord
+  # MEDIA_UNIVERSES: [["Transportation", ["bus", "taxi", "train" ]],["Eat/Drink", ["meal", "tea/cafe"]]]
+
   belongs_to :user
   has_one_attached :photo
   has_many :reviews
