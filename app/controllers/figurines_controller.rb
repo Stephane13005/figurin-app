@@ -15,6 +15,7 @@ class FigurinesController < ApplicationController
   def show
     @figurine = policy_scope(Figurine).find(params[:id])
     authorize @figurine
+    @review = Review.new
   end
 
   def media
