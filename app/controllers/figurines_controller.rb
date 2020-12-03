@@ -2,11 +2,12 @@ class FigurinesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @figurines = Figurine.all
+    @figurines = policy_scope(Figurine).order(created_at: :desc)
   end
 
   def show
-    @figurine = Figurine.find(params[:id])
+    @figurine = policy_scope(Figurine).find(params[:id])
+    authorize @figurine
   end
 
   def media
