@@ -4,7 +4,7 @@
     <%= f.input :name %>
     <%= f.input :year %>
     <%= f.input :brand %>
-  <%= f.input :media_universe, collection: %w( Video\ Games Star\ Wars\ Episode Star\ Wars\ Story The\ Mandalorian Iron\ Man X\ Men Game\ of\ Thrones Dragon\ Ball\ Z Dragon\ Ball\ Super)  %>
+  <%= f.input :media_universe, collection: %w( DC Video\ Games Marvel Wolverine Star\ Wars\ Episode Star\ Wars\ Story The\ Mandalorian Iron\ Man X\ Men Game\ of\ Thrones Dragon\ Ball\ Z Dragon\ Ball\ Super).sort %>
     <%= f.input :media_year %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
