@@ -1,7 +1,10 @@
 class FigurinesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show media]
+  after_action :verify_authorized, except: [:index, :show, :media], unless: :devise_controller?
+  after_action :verify_policy_scoped, except: [:index, :show, :media], unless: :devise_controller?
 
   def index
+    @figurines = policy_scope(Figurine).order(created_at: :desc)
     if params[:query].present?
       @figurines = Figurine.search_by(params[:query])
     else
@@ -10,11 +13,12 @@ class FigurinesController < ApplicationController
   end
 
   def show
-    @figurine = Figurine.find(params[:id])
+    @figurine = policy_scope(Figurine).find(params[:id])
+    authorize @figurine
   end
 
   def media
-    figurine = Figurine.find(params[:id])
+    figurine = policy_scope(Figurine).find(params[:id])
     fetch_media(figurine.media_universe, figurine.media_year)
   end
 
@@ -34,12 +38,14 @@ class FigurinesController < ApplicationController
   end
 
   def new
-    @figurine = Figurine.new
+    @figurine = policy_scope(Figurine).new
+    authorize @figurine
   end
 
   def create
-    @figurine = Figurine.new(figurine_params)
+    @figurine = policy_scope(Figurine).new(figurine_params)
     @figurine.user = current_user
+    authorize @figurine
     if @figurine.save
       redirect_to "/profile"
     else
@@ -48,17 +54,21 @@ class FigurinesController < ApplicationController
   end
 
   def edit
-    @figurine = Figurine.find(params[:id])
+    @figurine = policy_scope(Figurine).find(params[:id])
+    authorize @figurine
   end
 
   def update
-    @figurine = Figurine.find(params[:id])
+    @figurine = policy_scope(Figurine).find(params[:id])
+    authorize @figurine
     @figurine.update(figurine_params)
+
     redirect_to "/profile"
   end
 
   def destroy
-    @figurine = Figurine.find(params[:id])
+     @figurine = policy_scope(Figurine).find(params[:id])
+    authorize @figurine
     @figurine.destroy
     redirect_to "/profile"
   end

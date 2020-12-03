@@ -9,6 +9,7 @@
     <div class="container">
       <p>Year : <%= @figurine.year %></p>
       <p>Brand : <%= @figurine.brand %></p>
+      <p>Seller : <%= @figurine.user.profile.username %></p>
       <hr>
       <h3>Description :</h3>
       <p><%= @figurine.description %>.</p>
