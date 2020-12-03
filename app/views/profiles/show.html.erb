@@ -14,7 +14,7 @@
     <div class="containeruser">
       <div class="user text-center" >
         <div class="card card-profile shadow">
-          <h2 class="text-center"><strong>USER NAME</strong></h2>
+          <h2 class="text-center"><strong><%= @user.profile.username %></strong></h2>
             <div class="columns">
                 <div class="userimage text-center">
                   <% if @user.profile.photo.attached?%>
@@ -29,10 +29,10 @@
                       </div>
                           </h5>
                       <div class="h5 font-weight-300">
-                              <p>City :<%= @user.profile.city%></p>
+                              <p>City : <%= @user.profile.city%></p>
                       </div>
                           <div class="h5 font-weight-300">
-                              <p>Email :<%= @user.email%></p>
+                              <p>Email : <%= @user.email%></p>
                           </div>
                         </div>
                       </div>
@@ -67,11 +67,13 @@
               </div>
             </div>
           </div>
-        <div class="trophies">
-          <btn class="btn btn-return text-center"></i><%= link_to "return", root_path %></btn>
-        </div>
+
       </div>
     </div>
+            <div class="container text-center fig">
+          <button type="button" class="btn btn-primary coll"><%= link_to "Return", figurine_path %></button>
+        </div>
+
   </div>
 
 
