@@ -6,12 +6,12 @@ class ProfilePolicy < ApplicationPolicy
   end
 
   def create?
-  	true
+    true
   end
 
-private
+  private
 
-    def is_owner?
+  def is_owner?
     user == record.user
   end
 end

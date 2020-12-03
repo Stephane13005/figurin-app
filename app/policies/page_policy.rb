@@ -6,6 +6,6 @@ class PagePolicy < ApplicationPolicy
   end
 
   def home?
-  	true
+    true
   end
 end
