@@ -24,3 +24,10 @@
 .footer .fa-heart {
   color: #d23333;
 }
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 650px) {
+  .footer-copyright {
+    visibility: hidden;
+  }
+}
