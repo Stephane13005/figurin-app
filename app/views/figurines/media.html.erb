@@ -1,9 +1,18 @@
-<div class="container">
-<img src="<%= @movie_poster %>" alt="<%= @movie_title %>">
-<h1><%= @movie_title %> </h1> 
-<h2> Release date : <%= @movie_year %></h2>
-<p>Imdb Rating : <%= @movie_rating %> / 10 </p>
-<p>Directed by <%= @movie_director %> </p>
-<p>Actors : <%= @movie_actors %></p>
-<p>Plot : <%= @movie_plot %></p>
+<div class="container card-trip text-center">
+  <h1 class="text-center"><%= @movie_title %></h1>
+  <img src="<%= @movie_poster %>" alt="<%= @movie_title %>">
+  <div class="card-trip-infos">
+    <div>
+      <h3> Release date : <%= @movie_year %></h3>
+      <hr>
+      <p>Imdb Rating : <%= @movie_rating %> / 10 </p>
+      <p>Directed by <%= @movie_director %> </p>
+      <p>Actors : <%= @movie_actors %></p>
+      <p>Plot : <%= @movie_plot %></p>
+    </div>
+  </div>
+  <hr>
+</div>
+<div class="container text-center fig">
+  <button type="button" class="btn btn-primary coll"><%= link_to "Return", figurine_path %></button>
 </div>

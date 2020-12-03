@@ -3,8 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 50px;
   margin-bottom: 50px;
-  padding: 10px;
-  grid-gap: 16px;
+  grid-gap: 40px;
 }
 
 .cards ul {
@@ -15,54 +14,29 @@
 .ul {
   visibility: hidden;
 }
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 
 .card-category {
-  padding: 5px;
-  height: 300px;
-  width: 300px;
+  height: 100%;
+  width: 90%;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
+  background: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.image img {
+  height: 220px;
+  width: 220px;
+  padding: 10px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .card-category:hover {
@@ -76,15 +50,18 @@
   text-decoration: none;
 }
 
+// Page d'une Figurine
 .card-trip {
+  border-radius: 20px;
   margin-top: 60px;
-  width: 700px;
+  width: 600px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-trip > img {
+.card-trip img {
+  border-radius: 20px;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -117,4 +94,53 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card-trip > img {
+    height: 80%;
+    width: 80%;
+  }
+  .card-trip {
+    width: 300px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card-trip img {
+    height: 80%;
+    width: 80%;
+  }
+  .card-trip {
+    width: 400px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

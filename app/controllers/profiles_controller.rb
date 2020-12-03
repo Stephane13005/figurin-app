@@ -3,6 +3,11 @@ class ProfilesController < ApplicationController
   after_action :verify_authorized, except: :show, unless: :devise_controller?
   after_action :verify_policy_scoped, except: :show, unless: :devise_controller?
   
+
+def index
+  @profiles = Profile.all
+end
+
   def show
     @user = User.find(params[:id])
   end

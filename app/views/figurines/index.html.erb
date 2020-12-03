@@ -1,22 +1,33 @@
 <div class="text-center">
   <h1>Figurines list</h1>
   <hr>
-  <div class="button">
-    <button type="submit" class="btn btn-primary btn-lg">Search</button>
-    <button type="submit" class="btn btn-primary btn-lg">Filter</button>
+  <div class="container text-center">
+    <div class="search container text-center">
+      <%= form_tag figurines_path(anchor:"fig-list"), method: :get do %>
+        <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a figurine"
+  %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-  <div class="cards container">
+  <div class="cards container" id="fig-list">
     <% @figurines.each do |figurine| %>
       <ul>
-        <div class="card-category container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-          <div class="card box-shadow">
-            <% if figurine.photo.attached? %>
-              <%= cl_image_tag(figurine.photo.key, :width => 100) %>
-            <% else %>
-              <%= image_tag("logo.png", size: "100x100") %>
-            <% end %>
+        <div class="card-category container box-shadow">
+          <div class="image">
+            <div>
+              <% if figurine.photo.attached? %>
+                <%= cl_image_tag(figurine.photo.key) %>
+              <% else %>
+                <%= image_tag("logo.png") %>
+              <% end %>
+            </div>
             <div class="card-body">
-              <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %> - <%= figurine.year %></p>
+              <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
+              <p class="card-text"><%= figurine.year %></p>
               <div class="align-items-center">
                 <div class="text-center">
                   <button type="button" class="btn btn-sm btn-outline-secondary">⭐</button>
@@ -27,6 +38,7 @@
           </ul>
         <% end %>
       </div>
-      <div class="cards container">
-        <btn class="btn btn-return"></i><%= link_to "return", root_path %></btn>
+    <div class="container text-center fig">
+        <button type="button" class="btn btn-primary coll"><%= link_to "Return", root_path %></button>
     </div>
+  </div>

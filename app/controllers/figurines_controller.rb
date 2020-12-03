@@ -3,6 +3,11 @@ class FigurinesController < ApplicationController
 
   def index
     @figurines = policy_scope(Figurine).order(created_at: :desc)
+    if params[:query].present?
+      @figurines = Figurine.search_by(params[:query])
+    else
+      @figurines = Figurine.all
+    end
   end
 
   def show
@@ -12,7 +17,7 @@ class FigurinesController < ApplicationController
 
   def media
     figurine = Figurine.find(params[:id])
-    fetch_media(figurine.media_universe, figurine.year)
+    fetch_media(figurine.media_universe, figurine.media_year)
   end
 
   def fetch_media(title, year)
