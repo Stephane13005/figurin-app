@@ -28,10 +28,6 @@
   border-radius: 10px;
 }
 
-.navbar-lewagon {
-  justify-content: left;
-}
-
 .nav-item .nav-log {
   justify-content: end;
   background: #fd3a69;
@@ -41,4 +37,41 @@
   color: white;
   font-size: 24px;
   text-align: center;
+}
+
+.welcome {
+  color: white;
+  width: 40px;
+  position: relative;
+  top: 18px;
+  right: 40px;
+  text-align: center;
+  font-family: "Bangers", cursive;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 594px) {
+  .navbar-lewagon .navbar-brand {
+    padding: 6px;
+    margin: 6px;
+    width: 80px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 595px) and (max-width: 694px) {
+  .navbar-lewagon .navbar-brand {
+    padding: 6px;
+    margin: 6px;
+    width: 80px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 695px) and (max-width: 800px) {
+  .navbar-lewagon .navbar-brand {
+    padding: 7px;
+    margin: 7px;
+    width: 110px;
+  }
 }
