@@ -4,4 +4,25 @@
 
 .form {
   max-width: 600px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 1px solid #0f3057;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.form .form-actions input:hover {
+  background-color: #00587a;
+  color: white;
+}
+
+.form-actions input {
+  color: white;
+  background-color: #008891;
+  max-width: auto;
+  margin: 0;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  text-align: center;
+  border-radius: 10px;
 }

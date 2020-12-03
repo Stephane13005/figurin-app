@@ -1,12 +1,12 @@
-<div class="container card-trip">
+<div class="container card-trip text-center">
   <h1 class="text-center"><%= @figurine.name %></h1>
-    <% if @figurine.photo.attached? %>
-                <%= cl_image_tag(@figurine.photo.key, :width => 100) %>
-                <% else %>
-                <%= image_tag("logo.png", size: "100x100") %>
-                <% end %>
+  <% if @figurine.photo.attached? %>
+    <%= cl_image_tag(@figurine.photo.key) %>
+  <% else %>
+    <%= image_tag("logo.png") %>
+  <% end %>
   <div class="card-trip-infos">
-    <div>
+    <div class="container">
       <p>Year : <%= @figurine.year %></p>
       <p>Brand : <%= @figurine.brand %></p>
       <hr>
@@ -24,7 +24,7 @@
 </div>
 <div class="container text-center fig">
   <button type="button" class="btn btn-primary coll"><%= link_to "Collector", profile_path(@figurine.user) %></button>
-  <button type="button" class="btn btn-primary media">Media</button>
+  <button type="button" class="btn btn-primary media"><%= link_to "Media", media_figurine_path(@figurine) %></button>
 </div>
 <br>
 <br>

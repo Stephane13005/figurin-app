@@ -8,6 +8,23 @@
   width: 230px;
   margin: 120px auto;
 }
+
+.collectors {
+  font-size: 36px;
+  padding: 10px 10px;
+  border-radius: 25px;
+  background: #008891;
+  border: 2px solid black;
+  text-align: center;
+  width: 230px;
+  margin: 120px auto;
+}
+
+.collectors a {
+  text-decoration: none;
+  color: white;
+}
+
 .banner {
   margin-bottom: 70px;
 }
@@ -58,7 +75,7 @@
   padding: 10px 10px;
   border-radius: 15px;
   text-align: center;
-  width: 500px;
+  width: 400px;
   margin: 50px auto;
 }
 
@@ -80,18 +97,32 @@
 
 .coll {
   background: #008891;
-  text-decoration: none;
 }
 
-.coll a {
+.coll a,
+.media a {
   text-decoration: none;
   color: white;
 }
 
 .media {
   background: #00587a;
+  text-decoration: none;
 }
 
 .comm {
   background: #e7e7de;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .fig button {
+    margin-top: 50px;
+    display: block;
+    font-size: 36px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    margin: 50px auto;
+  }
 }
