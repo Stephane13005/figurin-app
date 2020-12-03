@@ -32,10 +32,10 @@
 }
 
 .image img {
-  height: 90%;
-  width: 90%;
+  height: 220px;
+  width: 220px;
   padding: 10px;
-
+  border-radius: 20px;
   object-fit: cover;
 }
 
@@ -52,14 +52,16 @@
 
 // Page d'une Figurine
 .card-trip {
+  border-radius: 20px;
   margin-top: 60px;
-  width: 700px;
+  width: 600px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-trip > img {
+.card-trip img {
+  border-radius: 20px;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -77,6 +79,7 @@
   font-size: 15px;
   opacity: 0.7;
   margin: 0;
+  text-align: left;
 }
 
 .card-trip .card-trip-infos {
@@ -99,12 +102,26 @@
   .cards {
     grid-template-columns: 1fr;
   }
+  .card-trip > img {
+    height: 80%;
+    width: 80%;
+  }
+  .card-trip {
+    width: 300px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  .card-trip img {
+    height: 80%;
+    width: 80%;
+  }
+  .card-trip {
+    width: 400px;
   }
 }
 
