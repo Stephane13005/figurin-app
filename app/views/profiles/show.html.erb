@@ -1,4 +1,5 @@
 <div id="contenu">
+   <div class="userimage text-center">
   <% if @user.profile.nil? %>
     <h1>This collector didn't give us any infos about him ! Sorry !</h1>
   <% else %>
@@ -16,7 +17,7 @@
         <div class="card card-profile shadow">
           <h2 class="text-center"><strong><%= @user.profile.username %></strong></h2>
             <div class="columns">
-                <div class="userimage text-center">
+
                   <% if @user.profile.photo.attached?%>
                         <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
                       <% else %>
