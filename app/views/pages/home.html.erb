@@ -6,8 +6,7 @@
 </div>
 <div class="container text-center">
   <h2 id="month">Month Figurin</h2>
-  <div class="row justify-content-center">
-    <div class="card  box-shadow">
+    <div class="card-category container box-shadow">
       <div class="image">
        <% if @figurine.photo.attached? %>
                 <%= cl_image_tag(@figurine.photo.key) %>
@@ -17,13 +16,12 @@
             </div>
       <div class="card-body">
         <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
-        <p class="card-text"><strong>Likes : 565</strong></p>
+        <p class="card-text">Likes : 565</p>
         <div class="align-items-center">
           <div class="text-center">
           </div>
         </div>
       </div>
-    </div>
   </div>
    <div class="collectors">	
     <%= link_to "Collectors", profiles_path %>	
@@ -31,7 +29,7 @@
   <h2 class="text-center" id= "apropos">About us</h2>
   <hr>
   <div class= "container apropos">
-    <p>Il y a quelques mois je classais les vieilles figurines Star Wars de ma marraine et voyant le peu d'infos exactes que l'on peut trouver sur tous les sites type marketplace, je me suis dit qu'une application comme Figurin'App pouvait faire la différence : Un site pour les collectionneurs de figurines fait par des collectionneurs de figurines !</p>
+    <p>Il y a quelques mois je classais les vieilles figurines Star Wars de ma marraine et voyant le peu d'infos que l'on peut trouver sur tous les sites type marketplace, je me suis dit qu'une application comme Figurin'App pouvait faire la différence : Un site pour les collectionneurs de figurines fait par des collectionneurs de figurines !</p>
     <p>Made by Léonard, Emmanuel, Mathieu, et Stéphane from le Wagon !</p>
   </div>
   <h2 class="text-center" id="contact">Contact us</h2>
