@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   after_action :verify_policy_scoped, except: :home, unless: :devise_controller?
 
   def home
-  	 @user = current_user
+    @user = current_user
+    @figurine = Figurine.find(5)
   end
 end

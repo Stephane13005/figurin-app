@@ -1,4 +1,4 @@
-class ProfilePolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,12 +6,14 @@ class ProfilePolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    !is_owner?
   end
 
   private
 
+
   def is_owner?
     user == record.user
   end
+
 end

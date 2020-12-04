@@ -1,20 +1,24 @@
-<div class="container card-trip text-center">
+
+<div class="container card-trip mediapage text-center">
+
   <h1 class="text-center"><%= @movie_title %></h1>
   <img src="<%= @movie_poster %>" alt="<%= @movie_title %>">
   <div class="card-trip-infos">
     <div>
       <h3> Release date : <%= @movie_year %></h3>
       <hr>
-      <div  class="media-text">
-        <p>Imdb Rating : <%= @movie_rating %> / 10 </p>
-        <p>Directed by <%= @movie_director %> </p>
-        <p>Actors : <%= @movie_actors %></p>
-        <p>Plot : <%= @movie_plot %></p>
+      <div class="media-text">
+        <p><strong>Imdb Rating :</strong> <%= @movie_rating %> / 10 </p>
+        <p><strong>Directed by :</strong> <%= @movie_director %> </p>
+        <p><strong>Actors :</strong> <%= @movie_actors %></p>
+        <p><strong>Plot :</strong> <%= @movie_plot %></p>
       </div>
     </div>
   </div>
   <hr>
 </div>
+
 <div class="container text-center fig">
   <button type="button" class="btn btn-primary coll"><%= link_to "Return", figurine_path %></button>
 </div>
+
