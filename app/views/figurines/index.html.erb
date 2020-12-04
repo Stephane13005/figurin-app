@@ -29,16 +29,16 @@
               <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
               <p class="card-text"><%= figurine.year %></p>
               <div class="align-items-center">
-                <div class="text-center">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">⭐</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">👍</button>
+                <div class="text-center" id="star">
+                  <%= link_to "⭐", figurines_path(anchor:"star"), class: "btn btn-sm btn-outline-secondary", data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
+                  <%= link_to "👍", figurines_path(anchor:"star"), class: "btn btn-sm btn-outline-secondary", data: {confirm: "Wow! You like this figurine very much !"}%>
                 </div>
               </div>
             </div>
           </ul>
         <% end %>
       </div>
-    <div class="container text-center fig">
+      <div class="container text-center fig">
         <button type="button" class="btn btn-primary coll"><%= link_to "Return", root_path %></button>
+      </div>
     </div>
-  </div>
