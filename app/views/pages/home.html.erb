@@ -8,30 +8,32 @@
   <h2 id="month">Month Figurin</h2>
   <div class="row justify-content-center">
     <div class="card  box-shadow">
-      <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22347%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20347%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17619e04b5c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17619e04b5c%22%3E%3Crect%20width%3D%22347%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.203125%22%20y%3D%22120.103125%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+      <div class="image">
+       <% if @figurine.photo.attached? %>
+                <%= cl_image_tag(@figurine.photo.key) %>
+              <% else %>
+                <%= image_tag("logo.png") %>
+              <% end %>
+            </div>
       <div class="card-body">
-        <p class="card-text"></p>
+        <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
+        <p class="card-text"><strong>Likes : 565</strong></p>
         <div class="align-items-center">
           <div class="text-center">
-            <button type="button" class="btn btn-sm btn-outline-secondary">:star:</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">:+1:</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="collectors">
-    <%= link_to "Collectors", profiles_path %>
-  </div>
   <h2 class="text-center" id= "apropos">About us</h2>
   <hr>
   <div class= "container apropos">
-    <p>Quam ob rem ut ii qui superiores sunt submittere se debent in amicitia, sic quodam modo inferiores extollere. Sunt enim quidam qui molestas amicitias faciunt, cum ipsi se contemni putant; quod non fere contingit nisi iis qui etiam contemnendos se arbitrantur; qui hac opinione non modo verbis sed etiam opere levandi sunt.
-      Post quorum necem nihilo lenius ferociens Gallus ut leo cadaveribus pastus multa huius modi scrutabatur. quae singula narrare non refert, me professione modum, quod evitandum est, excedamus.</p>
-    <p>Saepissime igitur mihi de amicitia cogitanti maxime illud considerandum videri solet, utrum propter imbecillitatem atque inopiam desiderata sit amicitia, ut dandis recipiendisque meritis quod quisque minus per se ipse posset, id acciperet ab alio vicissimque redderet, an esset hoc quidem proprium amicitiae, sed antiquior et pulchrior et magis a natura ipsa profecta alia causa. Amor enim, ex quo amicitia nominata est, princeps est ad benevolentiam coniungendam. Nam utilitates quidem etiam ab iis percipiuntur saepe qui simulatione amicitiae coluntur et observantur temporis causa, in amicitia autem nihil fictum est, nihil simulatum et, quidquid est, id est verum et voluntarium.</p>
+    <p>Il y a quelques mois je classais les vieilles figurines Star Wars de ma marraine et voyant le peu d'infos exactes que l'on peut trouver sur tous les sites type marketplace, je me suis dit qu'une application comme Figurin'App pouvait faire la différence : Un site pour les collectionneurs de figurines fait par des collectionneurs de figurines !</p>
+    <p>Made by Léonard, Emmanuel, Mathieu, et Stéphane from le Wagon !</p>
   </div>
   <h2 class="text-center" id="contact">Contact us</h2>
   <hr>
+  <p><%= link_to "Contact the team", "mailto:contact@figurinapp.com" %> </p>
   <form class= "container form">
     <div class="form-group">
       <label for="exampleInputEmail1">Name</label>

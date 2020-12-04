@@ -5,5 +5,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @figurine = Figurine.find(5)
   end
 end
