@@ -14,7 +14,7 @@
             <div class="columns">
                 <div class="userimage text-center">
                   <% if @profile.photo.attached?%>
-                        <p> <%= cl_image_tag @user.profile.photo.key, :width => 400, :crop => "fill" %></p>
+                        <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
                       <% else %>
                         <%= image_tag("logo.png", size: "100x100")%>
                       <% end %>
@@ -48,51 +48,49 @@
         <h2 class="text-center"><strong>My trophies</strong></h2>
           </div>
             </div>
-
-              <div class="trophies text-center">
-                <div class="scroller">
+              <div class="scroller">
+                <div class="trophies text-center">
                   <div class="d-flex flex-wrap ">
-                   <% @profile.user.figurines.each do |figurine| %>
-                      <div class="col-4">
+                    <% @profile.user.figurines.each do |figurine| %>
+                      <div class="col-4 card-trophies">
                       <% if figurine.photo.attached? %>
-                        <%= cl_image_tag(figurine.photo.key, :width => 200) %>
+                        <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
                       <% else %>
-
-                        <%= image_tag("logo.png", size: "200x200")%>
-
+                        <%= image_tag("logo.png", size: "200x300")%>
                           <% end %>
-                          <p><%= figurine.name %></p>
-
+                          <h5><%= link_to figurine.name, figurine_path(figurine) %></h5>
                               <%= link_to "⚙️", edit_figurine_path(figurine) %> |
                               <%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
                       </div>
                           <% end %>
+
                   </div>
                 </div>
               </div>
             </div>
 
-              <br>
+              <br><br>
             <div class="containeruser">
               <div class="user text-center" >
                 <div class="card card-profile shadow">
                   <h2 class="text-center"><strong>My favories</strong></h2>
                     </div>
                       </div>
-                        <div class="favories text-center">
-                          <div class="scroller">
+                        <div class="scroller">
+                          <div class="favories text-center">
                             <div class="d-flex flex-wrap ">
                              <% @profile.user.figurines.each do |figurine| %>
-                                <div class="col-4">
-                                <% if figurine.photo.attached? %>
-                                  <%= cl_image_tag(figurine.photo.key, :width => 100) %>
-                                <% else %>
-
-                                  <%= image_tag("logo.png", size: "200x200")%>
-                                  <p><%= figurine.name %></p>
+                                <div class="col-4 card-trophies">
+                                  <% if figurine.photo.attached? %>
+                                    <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
+                                  <% else %>
+                                    <%= image_tag("logo.png", size: "200x300")%>
+                                  <% end %>
+                                      <h5><%= link_to figurine.name, figurine_path(figurine) %></h5>
+                                    <%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
+                                  </div>
                                 <% end %>
-                              </div>
-                            <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -112,7 +110,7 @@
                 <%= f.input :photo, as: :file %>
                   <div class="form-actions">
                     <%= f.submit %>
-                  </div>               
+                  </div>
                 <% end %>
                  <%= link_to "Edit my log-in infos", edit_user_registration_path %>
               </div>
@@ -123,5 +121,4 @@
           <button type="button" class="btn btn-primary coll"><%= link_to "Return", root_path %></button>
         </div>
 
-         
-    
+
