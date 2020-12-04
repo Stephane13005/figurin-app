@@ -42,8 +42,8 @@
     <p><%= review.content %> </p>
   </div>
   <% end %>
-   <% end %>
 </div>
+   <% end %>
  <% if policy(@review).create? %>
 <%= simple_form_for([ @figurine, @review ]) do |f| %>
   <%= f.input :content %>
