@@ -1,0 +1,16 @@
+.mediapage {
+  width: 700px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 500px) {
+  .mediapage {
+    width: 300px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+  .mediapage {
+    width: 400px;
+  }
+}
