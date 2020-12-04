@@ -35,19 +35,21 @@
     <p>Be the first to leave a review for <%= @figurine.name %> figurine !</p>
   <% else %>
     <% @figurine.reviews.each do |review| %>
-      <div   class="container card-trip">
+      <div class="container card-trip">
         <h4><%= review.user.profile.username %></h4>
         <p><%= review.created_at %> </p>
         <div class="card-trip-infos">
           <p><%= review.content %> </p>
         </div>
-      <% end %>
-    </div>
-  <% end %>
-  <% if policy(@review).create? %>
-    <%= simple_form_for([ @figurine, @review ]) do |f| %>
-      <%= f.input :content %>
-      <%= f.submit "Submit your comment", class: "btn btn-primary" %>
+      </div>
     <% end %>
   <% end %>
+  <% if policy(@review).create? %>
+    <div class="container form" id="review">
+      <%= simple_form_for([ @figurine, @review ]) do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Submit your comment", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
