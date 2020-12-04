@@ -1,0 +1,20 @@
+<%= simple_form_for @figurine do |f| %>
+    <%= f.input :name %>
+    <%= f.input :year , label: "Release year" %>
+    <%= f.input :brand %>
+    <%= f.input :media_universe, 
+            :as => :grouped_select, 
+            collection: [["DC", ["Batman", "Superman"]],
+                         ["Marvel", ["Avengers", "Captain America", "Deadpool", "Wolverine", "X Men"]],
+                         ["Sci-Fi", ["Alien",  "Predator"]],
+                         ["Star Wars", ["Star Wars Episode", "Star Wars Story", "The Mandalorian"]]],
+            :group_method => :last, 
+            label: "Media Universe"%>
+    <%= f.input :media_universe, label: "Other media universe" %>
+    <%= f.input :media_year, placeholder: "Enter exact year please !" %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
