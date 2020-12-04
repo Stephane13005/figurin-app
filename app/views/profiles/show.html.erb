@@ -18,9 +18,9 @@
             <div class="columns">
                 <div class="userimage text-center">
                   <% if @user.profile.photo.attached?%>
-                        <p> <%= cl_image_tag @user.profile.photo.key, :width => 400, :crop => "fill" %></p>
+                        <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
                       <% else %>
-                        <%= image_tag("logo.png", size: "100x100")%>
+                        <%= image_tag("logo.png", size: "150x150")%>
                       <% end %>
                     </div>
                       <div class="text-center">
@@ -45,22 +45,22 @@
 <div id="droite">
   <div class="containeruser">
     <div class="user text-center" >
-      <div class="card card-profile shadow">
+      <div class="card card-profile  shadow">
         <h2 class="text-center"><strong>My trophies</strong></h2>
           </div>
             </div>
-              <div class="trophies text-center">
+              <div class="trophies text-center ">
                 <div class="scroller">
-                  <div class="d-flex flex-wrap ">
+                  <div class="d-flex flex-wrap">
                    <% @user.figurines.each do |figurine| %>
-                      <div class="col-4">
+                      <div class="col-4 card-trophies">
                       <% if figurine.photo.attached? %>
-                        <%= cl_image_tag(figurine.photo.key, :width => 200) %>
+                        <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
                       <% else %>
+                        <%= image_tag("logo.png", size: "200x300")%>
+                        <% end %>
+                        <h5><%=link_to figurine.name, figurine_path(figurine) %></h5>
 
-                        <%= image_tag("logo.png", size: "200x200")%>
-                        <p><%= figurine.name %></p>
-                      <% end %>
                     </div>
                   <% end %>
                 </div>

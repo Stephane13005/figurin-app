@@ -32,8 +32,8 @@
 }
 
 .image img {
-  height: 220px;
-  width: 220px;
+  height: 300px;
+  width: 200px;
   padding: 10px;
   border-radius: 20px;
   object-fit: cover;
@@ -144,4 +144,12 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+.card-trophies {
+  border-radius: 20px;
+  margin: 15px 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  max-width:29.3%
 }

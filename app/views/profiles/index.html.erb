@@ -9,7 +9,7 @@
             <% end %>
         </div>
     </div>
-    
+
     <div class="cards container" id="fig-list">
         <% @profiles.each do |profile| %>
         <ul>
@@ -17,9 +17,9 @@
             <div class="image">
                 <div>
                     <% if profile.photo.attached?%>
-                        <p> <%= cl_image_tag profile.photo.key, :width => 400, :crop => "fill" %></p>
+                        <p> <%= cl_image_tag profile.photo.key, :width => 200, :height =>300 %></p>
                     <% else %>
-                        <%= image_tag("logo.png", size: "100x100") %>
+                        <%= image_tag("logo.png", size: "200x300") %>
                     <% end %>
                 </div>
                 <h2><%= link_to profile.username, profile_path(profile) %></h2>
@@ -28,7 +28,7 @@
         </ul>
     <% end %>
     </div>
-    
+
     <div class="container text-center fig">
         <button type="button" class="btn btn-primary coll"><%= link_to "Return", root_path %></button>
     </div>
