@@ -47,7 +47,7 @@
  <% if policy(@review).create? %>
 <%= simple_form_for([ @figurine, @review ]) do |f| %>
   <%= f.input :content %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%= f.submit "Submit your comment", class: "btn btn-primary" %>
 <% end %>
 <% end %>
 </div>
