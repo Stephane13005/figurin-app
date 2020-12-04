@@ -1,4 +1,4 @@
-<div class="container card-trip text-center">
+<div class="container card-trip mediapage text-center">
   <h1 class="text-center"><%= @figurine.name %></h1>
   <% if @figurine.photo.attached? %>
     <%= cl_image_tag(@figurine.photo.key) %>
