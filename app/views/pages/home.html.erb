@@ -5,25 +5,23 @@
   <a href="#"><i class="fab fa-twitter-square fa-5x"></i></a>
 </div>
 <div class="container text-center">
-  <h2 id="month">Month Figurin</h2>
-    <div class="card-category container box-shadow">
-      <div class="image">
-       <% if @figurine.photo.attached? %>
-                <%= cl_image_tag(@figurine.photo.key) %>
-              <% else %>
-                <%= image_tag("logo.png") %>
-              <% end %>
-            </div>
-      <div class="card-body">
+  <div class="row">
+    <h2 id="month">Month Figurin</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 image">
+        <% if @figurine.photo.attached? %>
+          <%= cl_image_tag(@figurine.photo.key) %>
+        <% else %>
+          <%= image_tag("logo.png") %>
+        <% end %>
+    </div>
+      <div class="col-sm-12 col-md-6 align-self-center">
         <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
         <p class="card-text">Likes : <%= @figurine.likes_count %></p>
-        <div class="align-items-center">
-          <div class="text-center">
-          </div>
-        </div>
       </div>
-    </div>
   </div>
+</div>
   <h2 class="text-center" id= "apropos">About us</h2>
   <hr>
   <div class= "container apropos">
