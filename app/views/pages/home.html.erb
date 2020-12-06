@@ -4,23 +4,27 @@
   <a href="#"><i class="fab fa-instagram-square fa-5x"></i></a>
   <a href="#"><i class="fab fa-twitter-square fa-5x"></i></a>
 </div>
-<div class="container text-center">
-  <h2 id="month">Month Figurin</h2>
-  <% @popular.each do |like| %>
-    <div class="card-category container box-shadow">
+
+<h2 id="month">Month Figurin</h2>
+<div class="container card-trip card-category text-center box-shadow">
+    <% @popular.each do |like| %>
+    <div>
       <div class="image">
-       <% if like.figurine.photo.attached? %>
-                <%= cl_image_tag(like.figurine.photo.key) %>
-              <% else %>
-                <%= image_tag("logo.png") %>
-              <% end %>
-            </div>
-      <div class="card-body">
-        <p class="card-text"><%= link_to like.figurine.name, figurine_path(like.figurine) %></p>
-        <p class="card-text">Likes : <%= like.figurine.likes.count %></p>
+        <% if like.figurine.photo.attached? %>
+          <%= cl_image_tag(like.figurine.photo.key) %>
+        <% else %>
+          <%= image_tag("logo.png") %>
         <% end %>
-      </div>
-  </div>
+    </div>
+    <div class="text-center card-body">
+        <h1 class="card-text"><%= link_to like.figurine.name, figurine_path(like.figurine) %></h1>
+        <h1 class="card-text">Likes : <%= like.figurine.likes.count %></h1>
+    <% end %>
+    </div>
+<br>
+</div>
+
+
 </div>
   <h2 class="text-center" id= "apropos">About us</h2>
   <hr>
