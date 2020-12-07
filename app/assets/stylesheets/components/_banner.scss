@@ -1,12 +1,10 @@
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 100vh;
-}
 
-.banner h1 {
-  margin: 0;
+.carousel-inner h1 {
+  position: absolute;
+  top: 200px;
+  z-index: 2;
+  right: 15%;
+  left: 15%;
   color: white;
   font-family: "Bangers", cursive;
   font-style: normal;
@@ -20,6 +18,15 @@
   -webkit-text-stroke-color: #fd3a69;
 }
 
+.carousel img {
+  border-radius: 0px !important;
+  padding: 0px;
+  z-index: 1;
+}
+
+.carousel{
+  background-size: cover;
+}
 // Titres et bouton dans la home page
 #month {
   margin-bottom: 100px;
@@ -51,13 +58,8 @@
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    height: 100vh;
-  }
-  .banner h1 {
+
+  .carousel h1 {
     font-size: 65px;
     line-height: 90px;
   }
@@ -65,13 +67,8 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    height: 100vh;
-  }
-  .banner h1 {
+
+.carousel h1 {
     font-size: 100px;
     line-height: 120px;
   }
@@ -79,13 +76,8 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    height: 100vh;
-  }
-  .banner h1 {
+
+.carousel h1 {
     font-size: 110px;
     line-height: 120px;
   }
@@ -93,13 +85,8 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    height: 100vh;
-  }
-  .banner h1 {
+
+.carousel h1 {
     font-size: 120px;
     line-height: 130px;
   }
@@ -107,13 +94,8 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
-  .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    height: 100vh;
-  }
-  .banner h1 {
+
+.carousel h1 {
     font-size: 120px;
     line-height: 130px;
   }

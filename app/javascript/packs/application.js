@@ -30,6 +30,8 @@ import "bootstrap";
 import { hamburger } from '../components/hamburger';
 import { order } from '../components/order';
 
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
