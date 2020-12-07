@@ -2,7 +2,7 @@
     <%= f.input :name %>
     <%= f.input :year , label: "Release year" %>
     <%= f.input :brand %>
-    <%= f.input :price_cents, placeholder: "1000 Cents = 10 €" %>
+    <%= f.input :price_cents, label: "Price (1000 Cents = 10 €)" %>
     <%= f.input :media_universe, 
             :as => :grouped_select, 
             collection: [["DC", ["Batman", "Superman"]],
