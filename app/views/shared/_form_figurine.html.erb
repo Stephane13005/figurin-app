@@ -2,6 +2,7 @@
     <%= f.input :name %>
     <%= f.input :year , label: "Release year" %>
     <%= f.input :brand %>
+    <%= f.input :price_cents %>
     <%= f.input :media_universe, 
             :as => :grouped_select, 
             collection: [["DC", ["Batman", "Superman"]],

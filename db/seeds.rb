@@ -18,9 +18,9 @@ user3 = User.create!(email:"tutu@gmail.com", password: "tutu13")
 puts "Creating users ok !"
 
 puts "Creating figurines"
-Figurine.create!(name: "Han Solo", year: 1977, brand: "Kenner" , description: "Good shape", user_id: user1.id)
-Figurine.create!(name: "Luke Skywalker", year: 1977, brand: "Kenner" , description: "Good shape", user_id: user2.id)
-Figurine.create!(name: "Baby Yoda", year: 2019, brand: "Funko Pop" , description: "New", user_id: user3.id)
+Figurine.create!(name: "Han Solo", year: 1977, brand: "Kenner" , description: "Good shape", price_cents: 4000, user_id: user1.id)
+Figurine.create!(name: "Luke Skywalker", year: 1977, brand: "Kenner" , description: "Good shape", price_cents: 5000, user_id: user2.id)
+Figurine.create!(name: "Baby Yoda", year: 2019, brand: "Funko Pop" , description: "New", price_cents: 3000, user_id: user3.id)
 puts "Creating figurines ok !"
 
 puts "Creating profiles"
