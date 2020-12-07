@@ -1,4 +1,8 @@
 .figurines {
+  position: absolute;
+  top: 500px;
+   right: 15%;
+  left: 15%;
   font-size: 36px;
   padding: 10px 10px;
   border-radius: 25px;
@@ -25,10 +29,10 @@
   color: white;
 }
 
-.banner {
+.carousel {
   margin-bottom: 70px;
 }
-.banner a {
+.carousel a {
   text-decoration: none;
   color: white;
 }
