@@ -9,6 +9,7 @@
     <div class="container" id="star-show">
       <p>Year : <%= @figurine.year %></p>
       <p>Brand : <%= @figurine.brand %></p>
+      <p>Amount: <%= humanized_money_with_symbol(@figurine.price) %></p>
       <p>Seller : <%= @figurine.user.profile.username %></p>
       <hr>
       <h3>Description :</h3>
@@ -26,13 +27,17 @@
 <div class="container text-center fig">
   <button type="button" class="btn btn-primary coll"><%= link_to "Collector", profile_path(@figurine.user) %></button>
   <button type="button" class="btn btn-primary media"><%= link_to "Media", media_figurine_path(@figurine) %></button>
+  <%= form_tag orders_path do %>
+  <%= hidden_field_tag 'figurine_id', @figurine.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
 </div>
 <br>
 <br>
 <div class="container text-center fig">
   <button type="button" class="btn btn-primary comm" id="postreview">Comments</button>
   <% if @figurine.reviews.blank? %>
-    <p>Be the first to leave a review for <%= @figurine.name %> figurine !</p>
+    <p>Be the first to leave a comment for <%= @figurine.name %> figurine !</p>
   <% else %>
     <% @figurine.reviews.each do |review| %>
       <div class="container card-trip">

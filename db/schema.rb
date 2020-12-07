@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_103320) do
+ActiveRecord::Schema.define(version: 2020_12_07_110241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -57,7 +67,21 @@ ActiveRecord::Schema.define(version: 2020_12_02_103320) do
     t.string "media_title"
     t.integer "media_year"
     t.string "media_universe"
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_figurines_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "figurine_name"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "figurine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["figurine_id"], name: "index_orders_on_figurine_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -65,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_103320) do
     t.string "lastname"
     t.date "birthdate"
     t.string "city"
-    t.string "username"
+    t.string "username", default: "Anonymous User"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -90,6 +114,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_103320) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -98,6 +123,8 @@ ActiveRecord::Schema.define(version: 2020_12_02_103320) do
   add_foreign_key "favourites", "figurines"
   add_foreign_key "favourites", "users"
   add_foreign_key "figurines", "users"
+  add_foreign_key "orders", "figurines"
+  add_foreign_key "orders", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "figurines"
   add_foreign_key "reviews", "users"

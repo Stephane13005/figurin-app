@@ -38,6 +38,6 @@ class FigurinePolicy < ApplicationPolicy
   private
 
   def is_owner?
-    user == record.user
+    record.user == current_user
   end
 end
