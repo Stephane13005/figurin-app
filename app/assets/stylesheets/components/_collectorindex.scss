@@ -2,7 +2,7 @@
   padding: 75px;
   margin: auto;
   display: block-ruby;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   text-align: center;
 }
@@ -34,67 +34,59 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.ul{
- visibility: hidden;
+.ul {
+  visibility: hidden;
 }
 
- .containeruser{
-
-border: solid 1px;
- }
-
- .containertrophies{
-
-
- }
-
- #contenu{
-    height:95%;
-    width:95%;
-    margin:auto;
-    border-bottom:1px solid #ccc;
-    border-left:1px solid #ccc;
-    border-right:1px solid #ccc;
-    padding:20px;
-    font:12px arial;
-    overflow:hidden;
+.containeruser {
+  border: solid 1px;
 }
 
-#gauche{
-    float:left;
-    width:41%;
-    padding:14px;
-    margin-top:11px;
+.containertrophies {
 }
 
-#droite{
-    margin-top:76px;
-    width:60%;
-    margin-left:41%;
+#contenu {
+  height: 95%;
+  width: 95%;
+  margin: auto;
+  padding: 20px;
+  font: 12px arial;
+  overflow: hidden;
 }
 
-.trophies{
+#gauche {
+  float: left;
+  width: 41%;
+  padding: 14px;
+  margin-top: 11px;
+}
+
+#droite {
+  margin-top: 76px;
+  width: 60%;
+  margin-left: 41%;
+}
+
+.trophies {
   padding-top: 20px;
   padding-bottom: 20px;
   height-max: 400px;
-
 }
-.favories{
+.favories {
   padding-top: 20px;
   padding-bottom: 20px;
   height-max: 400px;
-
 }
 
 .scroller {
@@ -103,9 +95,9 @@ border: solid 1px;
   overflow-y: scroll;
 }
 a {
-  color:#008891;
-  text-decoration:none;
+  color: #008891;
+  text-decoration: none;
 }
 a:hover {
-  text-decoration:none;
+  text-decoration: none;
 }

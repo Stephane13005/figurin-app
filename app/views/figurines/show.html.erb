@@ -1,4 +1,4 @@
-<div class="container card-trip text-center">
+<div class="container card-trip mediapage text-center">
   <h1 class="text-center"><%= @figurine.name %></h1>
   <% if @figurine.photo.attached? %>
     <%= cl_image_tag(@figurine.photo.key) %>
@@ -44,13 +44,13 @@
         <h4><%= review.user.profile.username %></h4>
         <p><%= review.created_at %> </p>
         <div class="card-trip-infos">
-          <p><%= review.content %> </p>
+          <p id="review-<%= review.id %>"><%= review.content %> </p>
         </div>
       </div>
     <% end %>
   <% end %>
   <% if policy(@review).create? %>
-    <div class="container form" id="review">
+    <div class="container form">
       <%= simple_form_for([ @figurine, @review ]) do |f| %>
         <%= f.input :content %>
         <%= f.submit "Submit your comment", class: "btn btn-primary" %>
