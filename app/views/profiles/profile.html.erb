@@ -105,7 +105,8 @@
                 <%= f.input :firstname %>
                 <%= f.input :lastname %>
                 <%= f.input :username %>
-                <%= f.date_field :birthdate, label: "Birthdate" %>
+                <%= f.label "Birthdate" %>
+                <%= f.date_field :birthdate %>
                 <%= f.input :city %>
                 <%= f.input :photo, as: :file, label: ("You can create an avatar #{link_to 'here', "https://superherotar.framiq.com/fr/", target: "_blank"}").html_safe %>
                   <div class="form-actions">
