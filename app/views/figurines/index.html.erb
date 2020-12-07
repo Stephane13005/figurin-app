@@ -27,7 +27,7 @@
             </div>
             <div class="card-body">
               <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
-              <p class="card-text"><%= figurine.year %></p>
+              <p class="card-text"><%= figurine.year %> - <%= humanized_money_with_symbol(figurine.price) %></p>
               <div class="align-items-center">
                 <div class="text-center" id="star">
                   <%= link_to "⭐", figurines_path(anchor:"star"), class: "btn btn-sm btn-outline-secondary", data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
