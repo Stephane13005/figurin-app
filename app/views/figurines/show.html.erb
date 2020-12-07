@@ -39,13 +39,13 @@
         <h4><%= review.user.profile.username %></h4>
         <p><%= review.created_at %> </p>
         <div class="card-trip-infos">
-          <p><%= review.content %> </p>
+          <p id="review-<%= review.id %>"><%= review.content %> </p>
         </div>
       </div>
     <% end %>
   <% end %>
   <% if policy(@review).create? %>
-    <div class="container form" id="review">
+    <div class="container form">
       <%= simple_form_for([ @figurine, @review ]) do |f| %>
         <%= f.input :content %>
         <%= f.submit "Submit your comment", class: "btn btn-primary" %>
