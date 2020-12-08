@@ -37,7 +37,7 @@
   <button type="button" class="btn btn-primary media"><%= link_to "Media", media_figurine_path(@figurine) %></button>
   <%= form_tag orders_path do %>
     <%= hidden_field_tag 'figurine_id', @figurine.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-purchase' %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary btn-purchase' %>
   <% end %>
 </div>
 <br>

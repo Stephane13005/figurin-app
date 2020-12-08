@@ -1,7 +1,7 @@
 .cards {
   padding: 75px;
   margin: auto;
-  display: block-ruby;
+  display: block;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   text-align: center;
@@ -53,9 +53,6 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.containertrophies {
-}
-
 #contenu {
   height: 95%;
   width: 95%;
@@ -81,12 +78,12 @@
 .trophies {
   padding-top: 20px;
   padding-bottom: 20px;
-  height-max: 400px;
+  max-height: 400px;
 }
 .favories {
   padding-top: 20px;
   padding-bottom: 20px;
-  height-max: 400px;
+  max-height: 400px;
 }
 
 .scroller {
