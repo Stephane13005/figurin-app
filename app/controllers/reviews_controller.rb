@@ -5,10 +5,10 @@ class ReviewsController < ApplicationController
     @review.figurine = policy_scope(Figurine).find(params[:figurine_id])
     if @review.save
       redirect_to figurine_path(@review.figurine, anchor:"review-#{@review.id}")
-else
-	render 'figurines/show'
+    else
+	    render 'figurines/show'
+    end
   end
-end
 
   private
 

@@ -1,7 +1,7 @@
- .figurines{
+.figurines {
   position: absolute;
   top: 500px;
-   right: 15%;
+  right: 15%;
   left: 15%;
   font-size: 36px;
   padding: 10px 10px;
@@ -14,8 +14,57 @@
   font-family: "Bangers", cursive;
   letter-spacing: 3px;
 }
-.figurines:hover{
-  background-color: #0f3057
+.figurines:hover {
+  background-color: #0f3057;
+}
+
+// Ultra small
+@media (min-width: 320px) {
+  .figurines {
+    top: 50px;
+  }
+}
+
+// Super small
+@media (min-width: 400px) {
+  .figurines {
+    top: 80px;
+  }
+}
+
+// Smallest device
+@media (min-width: 576px) {
+  .figurines {
+    top: 170px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 768px) {
+  .figurines {
+    top: 250px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 850px) {
+  .figurines {
+    top: 320px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .figurines {
+    top: 400px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .figurines {
+    top: 500px;
+  }
 }
 
 .collectors {
@@ -29,8 +78,8 @@
   margin: 120px auto;
   font-family: "Bangers", cursive;
 }
-.collectors:hover{
-  background: #0f3057
+.collectors:hover {
+  background: #0f3057;
 }
 .collectors a {
   text-decoration: none;
@@ -54,17 +103,16 @@
   border: 2px solid white;
   text-align: center;
   font-family: "Bangers", cursive;
-  letter-spacing:3px;
+  letter-spacing: 3px;
 }
-
 
 .btn-primary:hover {
   background: #0f3057;
 }
 
-.btn-purchase{
-color: white;
-font-size: 24px;
+.btn-purchase {
+  color: white;
+  font-size: 24px;
   padding: 8px 8px;
   border-radius: 15px;
   background: #fd3a69;
@@ -78,21 +126,18 @@ font-size: 24px;
   text-align: center;
   width: 400px;
   margin: 50px auto;
- margin-top: 40px;
- font-family: "Bangers", cursive;
- letter-spacing:3px;
-
+  margin-top: 40px;
+  font-family: "Bangers", cursive;
+  letter-spacing: 3px;
 }
 .btn-purchase:hover {
   background: #d51d4c;
-  color:white;
+  color: white;
 }
-
 
 .btn-return a {
   text-decoration: none;
   color: white;
-
 }
 
 .btn-return {
@@ -104,7 +149,6 @@ font-size: 24px;
   transition: background 0.3s ease;
   border: 2px solid white;
   text-align: center;
-
 }
 
 .btn-return:hover {
@@ -170,6 +214,5 @@ font-size: 24px;
     text-align: center;
     width: 300px;
     margin: 50px auto;
-
   }
 }
