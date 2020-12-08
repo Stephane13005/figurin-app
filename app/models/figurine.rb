@@ -7,6 +7,7 @@ class Figurine < ApplicationRecord
   has_many :favourites
   has_many :favorited_by, through: :favourites, source: :user
   monetize :price_cents
+  has_many :likes, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by,
