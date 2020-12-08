@@ -5,6 +5,7 @@ class Figurine < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :favourites
+  has_many :favorited_by, through: :favourites, source: :user
   monetize :price_cents
 
   include PgSearch::Model

@@ -74,21 +74,21 @@
             <div class="containeruser">
               <div class="user text-center" >
                 <div class="card card-profile shadow">
-                  <h2 class="text-center"><strong>My favories</strong></h2>
+                  <h2 class="text-center"><strong>My favorites</strong></h2>
                     </div>
                       </div>
                         <div class="scroller">
                           <div class="favories text-center">
                             <div class="d-flex flex-wrap ">
-                             <% @profile.user.figurines.each do |figurine| %>
+                             <% @profile.user.favourites.each do |favorite| %>
                                 <div class="col-4 card-trophies">
-                                  <% if figurine.photo.attached? %>
-                                    <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
+                                  <% if favorite.figurine.photo.attached? %>
+                                    <%= cl_image_tag(favorite.figurine.photo.key, :width => 200, :height =>300) %>
                                   <% else %>
                                     <%= image_tag("logo.png", size: "200x300")%>
                                   <% end %>
-                                      <h5><%= link_to figurine.name, figurine_path(figurine) %></h5>
-                                    <%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
+                                      <h5><%= link_to favorite.figurine.name, figurine_path(favorite.figurine) %></h5>
+                                    <%= link_to "🗑", favourite_path(favorite), method: :delete, data: {confirm: "Are you sure ?"} %>
                                   </div>
                                 <% end %>
                             </div>

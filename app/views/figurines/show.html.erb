@@ -21,7 +21,7 @@
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
     <%= link_to "👍", figurine_path(anchor:"star-show"), class: "btn btn-primary btn-sm", data: {confirm: "Wow! You like this figurine very much !"}%>
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '💬', figurine_path(anchor:"postreview")%></button>
-    <%= link_to "⭐", figurine_path(anchor:"star-show"), class: "btn btn-primary btn-sm", data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
+    <%= link_to "⭐", favorite_figurine_path(@figurine), class: "btn btn-primary btn-sm", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
   </div>
 </div>
 <div class="container text-center fig">
