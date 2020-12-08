@@ -16,6 +16,8 @@
   color: #00587a;
   font-size: 20px;
   text-align: center;
+  font-family: "Bangers", cursive;
+  letter-spacing: 2px;
 }
 
 .navbar-lewagon .navbar-brand:hover {
@@ -25,7 +27,7 @@
 .navbar-lewagon img {
   padding: 5px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .nav-item .nav-log {
@@ -37,16 +39,26 @@
   color: white;
   font-size: 24px;
   text-align: center;
+  font-family: "Bangers", cursive;
+  letter-spacing: 3px;
+}
+.nav-log:hover{
+ background: #d51d4c
+
 }
 
 .welcome {
-  color: white;
-  width: 40px;
-  position: relative;
-  top: 18px;
-  right: 40px;
-  text-align: center;
-  font-family: "Bangers", cursive;
+width: 50px;
+position: relative;
+top: 24px;
+right: 30px;
+text-align: center;
+font-family: "Bangers", cursive;
+font-size: 21px;
+-webkit-text-stroke: 0.8px grey;
+   color: white;
+   text-shadow:
+       2px 2px 0 #fd3a69;
 }
 
 // Smallest device

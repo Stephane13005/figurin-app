@@ -19,7 +19,7 @@
   <hr>
   <div class="text-center">
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
-    <%= link_to "👍", figurine_path(anchor:"star-show"), class: "btn btn-primary btn-sm", data: {confirm: "Wow! You like this figurine very much !"}%>
+    <%= link_to "👍 | 👎", figurine_path(anchor:"star-show"), class: "btn btn-primary btn-sm", data: {confirm: "Wow! You like this figurine very much !"}%>
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '💬', figurine_path(anchor:"postreview")%></button>
     <%= link_to "⭐", figurine_path(anchor:"star-show"), class: "btn btn-primary btn-sm", data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
   </div>
@@ -29,7 +29,7 @@
   <button type="button" class="btn btn-primary media"><%= link_to "Media", media_figurine_path(@figurine) %></button>
   <%= form_tag orders_path do %>
   <%= hidden_field_tag 'figurine_id', @figurine.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <%= submit_tag 'Purchase', class: 'btn btn-purchase' %>
 <% end %>
 </div>
 <br>
