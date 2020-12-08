@@ -98,9 +98,8 @@
                     </div>
                   </div>
 
-                  <br>
-                  <div>
-            <div class="container">
+            <br>
+            <div class="form container">
               <h2 id="edit_infos">Edit your informations</h2>
                 <%= simple_form_for @profile, method: :patch do |f| %>
                 <%= f.input :firstname %>
@@ -115,12 +114,10 @@
                   </div>
                 <% end %>
                  <%= link_to "Edit my log-in infos", edit_user_registration_path %>
-              </div>
-
             </div>
+
           </div>
+        </div>
         <div class="container text-center fig">
           <button type="button" class="btn btn-primary coll"><%= link_to "Return", :back %></button>
         </div>
-
-
