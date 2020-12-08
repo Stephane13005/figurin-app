@@ -6,17 +6,19 @@
 </div>
 <div class="container text-center">
   <h2 id="month">Month Figurin</h2>
+  <% @popular.each do |like| %>
     <div class="card-category container box-shadow">
       <div class="image">
-       <% if @figurine.photo.attached? %>
-                <%= cl_image_tag(@figurine.photo.key) %>
+       <% if like.figurine.photo.attached? %>
+                <%= cl_image_tag(like.figurine.photo.key) %>
               <% else %>
                 <%= image_tag("logo.png") %>
               <% end %>
             </div>
       <div class="card-body">
-        <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
-        <p class="card-text">Likes : <%= @figurine.likes_count %></p>
+        <p class="card-text"><%= link_to like.figurine.name, figurine_path(like.figurine) %></p>
+        <p class="card-text">Likes : <%= like.figurine.likes.count %></p>
+        <% end %>
         <div class="align-items-center">
           <div class="text-center">
           </div>
