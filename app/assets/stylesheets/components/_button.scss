@@ -1,4 +1,4 @@
-.figurines {
+ .figurines{
   position: absolute;
   top: 500px;
    right: 15%;
@@ -11,6 +11,11 @@
   text-align: center;
   width: 230px;
   margin: 120px auto;
+  font-family: "Bangers", cursive;
+  letter-spacing: 3px;
+}
+.figurines:hover{
+  background-color: #0f3057
 }
 
 .collectors {
@@ -22,8 +27,11 @@
   text-align: center;
   width: 230px;
   margin: 120px auto;
+  font-family: "Bangers", cursive;
 }
-
+.collectors:hover{
+  background: #0f3057
+}
 .collectors a {
   text-decoration: none;
   color: white;
@@ -45,15 +53,46 @@
   transition: background 0.3s ease;
   border: 2px solid white;
   text-align: center;
+  font-family: "Bangers", cursive;
+  letter-spacing:3px;
 }
+
 
 .btn-primary:hover {
   background: #0f3057;
 }
 
+.btn-purchase{
+color: white;
+font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background: #fd3a69;
+  transition: background 0.3s ease;
+  border: 2px solid white;
+  text-align: center;
+  display: block;
+  font-size: 36px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  text-align: center;
+  width: 400px;
+  margin: 50px auto;
+ margin-top: 40px;
+ font-family: "Bangers", cursive;
+ letter-spacing:3px;
+
+}
+.btn-purchase:hover {
+  background: #d51d4c;
+  color:white;
+}
+
+
 .btn-return a {
   text-decoration: none;
   color: white;
+
 }
 
 .btn-return {
@@ -65,6 +104,7 @@
   transition: background 0.3s ease;
   border: 2px solid white;
   text-align: center;
+
 }
 
 .btn-return:hover {
@@ -81,6 +121,8 @@
   text-align: center;
   width: 400px;
   margin: 50px auto;
+  letter-spacing: 3px;
+  font-family: "Bangers", cursive;
 }
 
 .card-trip .btn-primary {
@@ -128,5 +170,6 @@
     text-align: center;
     width: 300px;
     margin: 50px auto;
+
   }
 }
