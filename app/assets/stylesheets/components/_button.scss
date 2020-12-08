@@ -1,7 +1,7 @@
  .figurines{
   position: absolute;
   top: 500px;
-   right: 15%;
+  right: 15%;
   left: 15%;
   font-size: 36px;
   padding: 10px 10px;
@@ -16,6 +16,55 @@
 }
 .figurines:hover{
   background-color: #0f3057
+}
+
+// Ultra small
+@media (min-width: 320px) {
+  .figurines {
+    top: 50px;
+  }
+}
+
+// Super small
+@media (min-width: 400px) {
+  .figurines {
+    top: 80px;
+  }
+}
+
+// Smallest device
+@media (min-width: 576px) {
+  .figurines {
+    top: 170px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 768px) {
+  .figurines {
+    top: 250px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 850px) {
+  .figurines {
+    top: 320px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .figurines {
+    top: 400px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .figurines {
+    top: 500px;
+  }
 }
 
 .collectors {
