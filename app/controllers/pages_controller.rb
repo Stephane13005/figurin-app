@@ -4,6 +4,6 @@ class PagesController < ApplicationController
   after_action :verify_policy_scoped, except: :home, unless: :devise_controller?
 
   def home
-  	@figurine = Figurine.order(:likes_count).first
+  	@popular = Like.popular
   end
 end
