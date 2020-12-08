@@ -7,6 +7,7 @@ class LikesController < ApplicationController
       flash[:notice] = "You can't like more than once"
     else
       @figurine.likes.create(user_id: current_user.id)
+      redirect_back(fallback_location: :back)
     end
   end
 
@@ -19,6 +20,7 @@ class LikesController < ApplicationController
       flash[:notice] = "Cannot unlike"
     else
       @like.destroy
+      redirect_back(fallback_location: :back)
     end
   end
   

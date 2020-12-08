@@ -1,123 +1,116 @@
-
 <div id="contenu">
-<h1 class="text-center">Welcome <%= @user.profile.username %> !</h1>
-    <div id="gauche">
-
+  <h1 class="text-center">Welcome <%= @user.profile.username %> !</h1>
+  <div id="gauche">
     <br>
     <br>
-<br>
-
+    <br>
     <div class="containeruser">
       <div class="user text-center" >
         <div class="card card-profile shadow">
           <h2 class="text-center"><strong><%= @profile.username %></strong></h2>
-            <div class="columns">
-                <div class="userimage text-center">
-                  <% if @profile.photo.attached?%>
-                        <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
-                      <% else %>
-                        <%= image_tag("logo.png", size: "100x100")%>
-                      <% end %>
-                    </div>
-                      <div class="text-center">
-                          <h5 class="h5">
-                             <p>Date of birth : <%= @profile.birthdate %><p>
-
-                          </h5>
-                      <div class="h5 font-weight-300">
-                              <p>City : <%= @profile.city%></p>
-                      </div>
-                          <div class="h5 font-weight-300">
-                              <p>Email : <%=@profile.user.email%></p>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
+          <div class="columns">
+            <div class="userimage text-center">
+              <% if @profile.photo.attached?%>
+                <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
+              <% else %>
+                <%= image_tag("logo.png", size: "100x100")%>
+              <% end %>
+            </div>
+            <div class="text-center">
+              <h5 class="h5">
+                <p>Date of birth : <%= @profile.birthdate %>
+                  <p>
+                  </h5>
+                  <div class="h5 font-weight-300">
+                    <p>City : <%= @profile.city%></p>
+                  </div>
+                  <div class="h5 font-weight-300">
+                    <p>Email : <%=@profile.user.email%></p>
                   </div>
                 </div>
-                <div class="text-center">
-                <br>
-                <button type="button" class=" btn btn-primary coll"><%= link_to "Add a figurine", new_figurine_path %></button>
-               </div>
               </div>
-
-<div id="droite">
-  <div class="containeruser">
-    <div class="user text-center" >
-      <div class="card card-profile shadow">
-        <h2 class="text-center"><strong>My trophies</strong></h2>
+            </div>
           </div>
+        </div>
+        <div class="text-center">
+          <br>
+          <button type="button" class=" btn btn-primary coll"><%= link_to "Add a figurine", new_figurine_path %></button>
+        </div>
+      </div>
+      <div id="droite">
+        <div class="containeruser">
+          <div class="user text-center" >
+            <div class="card card-profile shadow">
+              <h2 class="text-center"><strong>My trophies</strong></h2>
             </div>
-              <div class="scroller">
-                <div class="trophies text-center">
-                  <div class="d-flex flex-wrap ">
-                    <% @profile.user.figurines.each do |figurine| %>
-                      <div class="col-4 card-trophies">
-                      <% if figurine.photo.attached? %>
-                        <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
-                      <% else %>
-                        <%= image_tag("logo.png", size: "200x300")%>
-                          <% end %>
-                          <h5><%= link_to figurine.name, figurine_path(figurine) %></h5>
-                              <%= link_to "⚙️", edit_figurine_path(figurine) %> |
-                              <%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
-                      </div>
-                          <% end %>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-              <br><br>
-            <div class="containeruser">
-              <div class="user text-center" >
-                <div class="card card-profile shadow">
-                  <h2 class="text-center"><strong>My favorites</strong></h2>
-                    </div>
-                      </div>
-                        <div class="scroller">
-                          <div class="favories text-center">
-                            <div class="d-flex flex-wrap ">
-                             <% @profile.user.favourites.each do |favorite| %>
-                                <div class="col-4 card-trophies">
-                                  <% if favorite.figurine.photo.attached? %>
-                                    <%= cl_image_tag(favorite.figurine.photo.key, :width => 200, :height =>300) %>
-                                  <% else %>
-                                    <%= image_tag("logo.png", size: "200x300")%>
-                                  <% end %>
-                                      <h5><%= link_to favorite.figurine.name, figurine_path(favorite.figurine) %></h5>
-                                    <%= link_to "🗑", favourite_path(favorite), method: :delete, data: {confirm: "Are you sure ?"} %>
-                                  </div>
-                                <% end %>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-            <br>
-            <div class="form container">
-              <h2 id="edit_infos">Edit your informations</h2>
-                <%= simple_form_for @profile, method: :patch do |f| %>
-                <%= f.input :firstname %>
-                <%= f.input :lastname %>
-                <%= f.input :username %>
-                <%= f.label "Birthdate" %>
-                <%= f.date_field :birthdate %>
-                <%= f.input :city %>
-                <%= f.input :photo, as: :file, label: ("You can create an avatar #{link_to 'here', "https://superherotar.framiq.com/fr/", target: "_blank"}").html_safe %>
-                  <div class="form-actions">
-                    <%= f.submit %>
+          </div>
+          <div class="scroller">
+            <div class="trophies text-center">
+              <div class="d-flex flex-wrap ">
+                <% @profile.user.figurines.each do |figurine| %>
+                  <div class="col-4 card-trophies">
+                    <% if figurine.photo.attached? %>
+                      <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
+                    <% else %>
+                      <%= image_tag("logo.png", size: "200x300")%>
+                    <% end %>
+                    <h5><%= link_to figurine.name, figurine_path(figurine) %></h5>
+                    <%= link_to "⚙️", edit_figurine_path(figurine) %> |
+                    <%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
                   </div>
                 <% end %>
-                 <%= link_to "Edit my log-in infos", edit_user_registration_path %>
+              </div>
             </div>
-
           </div>
         </div>
-        <div class="container text-center fig">
-          <button type="button" class="btn btn-primary coll"><%= link_to "Return", :back %></button>
+        <br>
+        <br>
+        <div class="containeruser">
+          <div class="user text-center" >
+            <div class="card card-profile shadow">
+              <h2 class="text-center"><strong>My favorites</strong></h2>
+            </div>
+          </div>
+          <div class="scroller">
+            <div class="favories text-center">
+              <div class="d-flex flex-wrap ">
+                <% @profile.user.favourites.each do |favorite| %>
+                  <div class="col-4 card-trophies">
+                    <% if favorite.figurine.photo.attached? %>
+                      <%= cl_image_tag(favorite.figurine.photo.key, :width => 200, :height =>300) %>
+                    <% else %>
+                      <%= image_tag("logo.png", size: "200x300")%>
+                    <% end %>
+                    <h5><%= link_to favorite.figurine.name, figurine_path(favorite.figurine) %></h5>
+                    <%= link_to "🗑", favourite_path(favorite), method: :delete, data: {confirm: "Are you sure ?"} %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <br>
+    <div class="form container">
+      <h2 id="edit_infos">Edit your informations</h2>
+      <%= simple_form_for @profile, method: :patch do |f| %>
+        <%= f.input :firstname %>
+        <%= f.input :lastname %>
+        <%= f.input :username %>
+        <%= f.label "Birthdate" %><br>
+        <%= f.date_field :birthdate %><br>
+        <br>
+        <%= f.input :city %>
+        <%= f.input :photo, as: :file, label: ("You can create an avatar #{link_to 'here', "https://superherotar.framiq.com/fr/", target: "_blank"}").html_safe %>
+        <div class="form-actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+      <%= link_to "Edit my log-in infos", edit_user_registration_path %>
+    </div>
+  </div>
+</div>
+<div class="container text-center fig">
+  <button type="button" class="btn btn-primary coll"><%= link_to "Return", :back %></button>
+</div>
