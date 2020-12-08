@@ -18,15 +18,12 @@
             </div>
       <div class="card-body">
         <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
-        <p class="card-text">Likes : 565</p>
+        <p class="card-text">Likes : <%= @figurine.likes_count %></p>
         <div class="align-items-center">
           <div class="text-center">
           </div>
         </div>
       </div>
-  </div>
-   <div class="collectors">
-    <%= link_to "Collectors", profiles_path %>
   </div>
   <h2 class="text-center" id= "apropos">About us</h2>
   <hr>
