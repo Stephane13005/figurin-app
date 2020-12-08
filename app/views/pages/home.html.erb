@@ -1,6 +1,4 @@
   <%= render 'shared/banner' %>
-
-
 <div class="container text-center social-icons">
   <a href="#"><i class="fab fa-facebook-square fa-5x"></i></a>
   <a href="#"><i class="fab fa-instagram-square fa-5x"></i></a>
@@ -8,24 +6,24 @@
 </div>
 <div class="container text-center">
   <h2 id="month">Month Figurin</h2>
-    <div class="card-category container box-shadow">
-      <div class="image">
-       <% if @figurine.photo.attached? %>
-                <%= cl_image_tag(@figurine.photo.key) %>
-              <% else %>
-                <%= image_tag("logo.png") %>
-              <% end %>
-            </div>
-      <div class="card-body">
-        <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
-        <p class="card-text">Likes : 565</p>
-        <div class="align-items-center">
-          <div class="text-center">
-          </div>
+  <div class="card-category container box-shadow">
+    <div class="image">
+      <% if @figurine.photo.attached? %>
+        <%= cl_image_tag(@figurine.photo.key) %>
+      <% else %>
+        <%= image_tag("logo.png") %>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= link_to @figurine.name, figurine_path(@figurine) %></p>
+      <p class="card-text">Likes : 565</p>
+      <div class="align-items-center">
+        <div class="text-center">
         </div>
       </div>
+    </div>
   </div>
-   <div class="collectors">
+  <div class="collectors">
     <%= link_to "Collectors", profiles_path %>
   </div>
   <h2 class="text-center" id= "apropos">About us</h2>

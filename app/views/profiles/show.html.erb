@@ -1,77 +1,66 @@
 <div id="contenu">
-   <div class="userimage text-center">
-  <% if @user.profile.nil? %>
-    <h1>This collector didn't give us any infos about him ! Sorry !</h1>
-  <% else %>
-    <h1 class="text-center">Welcome on <%= @user.profile.username %> profile page !</h1>
-  <% end %>
+  <div class="userimage text-center">
+    <% if @user.profile.nil? %>
+      <h1>This collector didn't give us any infos about him ! Sorry !</h1>
+    <% else %>
+      <h1 class="text-center">Welcome on <%= @user.profile.username %> profile page !</h1>
+    <% end %>
     <div id="gauche">
-
-    <br>
-    <br>
-    <br>
-
-
-    <div class="containeruser">
-      <div class="user text-center" >
-        <div class="card card-profile shadow">
-          <h2 class="text-center"><strong><%= @user.profile.username %></strong></h2>
+      <br>
+      <br>
+      <br>
+      <div class="containeruser">
+        <div class="user text-center" >
+          <div class="card card-profile shadow">
+            <h2 class="text-center"><strong><%= @user.profile.username %></strong></h2>
             <div class="columns">
-
-                  <% if @user.profile.photo.attached?%>
-                        <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
-                      <% else %>
-                        <%= image_tag("logo.png", size: "150x150")%>
-                      <% end %>
-                    </div>
-                      <div class="text-center">
-                          <h5 class="h5">
-                             <p>Date of birth : <%= @user.profile.birthdate %><p>
-                      </div>
-                          </h5>
-                      <div class="h5 font-weight-300">
-                              <p>City : <%= @user.profile.city%></p>
-                      </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-
-<div id="droite">
-  <div class="containeruser">
-    <div class="user text-center" >
-      <div class="card card-profile  shadow">
-        <h2 class="text-center"><strong>My trophies</strong></h2>
-          </div>
+              <% if @user.profile.photo.attached?%>
+                <p> <%= cl_image_tag @user.profile.photo.key, :width => 150, :height => 150 %></p>
+              <% else %>
+                <%= image_tag("logo.png", size: "150x150")%>
+              <% end %>
             </div>
-              <div class="trophies text-center ">
-                <div class="scroller">
-                  <div class="d-flex flex-wrap">
-                   <% @user.figurines.each do |figurine| %>
-                      <div class="col-4 card-trophies">
-                      <% if figurine.photo.attached? %>
-                        <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
-                      <% else %>
-                        <%= image_tag("logo.png", size: "200x300")%>
-                        <% end %>
-                        <h5><%=link_to figurine.name, figurine_path(figurine) %></h5>
-
-                    </div>
-                  <% end %>
+            <div class="text-center">
+              <h5 class="h5">
+                <p>Date of birth : <%= @user.profile.birthdate %>
+                  <p>
+                  </div>
+                </h5>
+                <div class="h5 font-weight-300">
+                  <p>City : <%= @user.profile.city%></p>
                 </div>
               </div>
             </div>
           </div>
-
+        </div>
+      </div>
+      <div id="droite">
+        <div class="containeruser">
+          <div class="user text-center" >
+            <div class="card card-profile  shadow">
+              <h2 class="text-center"><strong>My trophies</strong></h2>
+            </div>
+          </div>
+          <div class="trophies text-center ">
+            <div class="scroller">
+              <div class="d-flex flex-wrap">
+                <% @user.figurines.each do |figurine| %>
+                  <div class="col-4 card-trophies">
+                    <% if figurine.photo.attached? %>
+                      <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
+                    <% else %>
+                      <%= image_tag("logo.png", size: "200x300")%>
+                    <% end %>
+                    <h5><%=link_to figurine.name, figurine_path(figurine) %></h5>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-        <div class="container text-center fig">
-          <button type="button" class="btn btn-primary coll"><%= link_to "Return", :back %></button>
-        </div>
-
+    <div class="container text-center fig">
+      <button type="button" class="btn btn-primary coll"><%= link_to "Return", :back %></button>
+    </div>
   </div>
-
-

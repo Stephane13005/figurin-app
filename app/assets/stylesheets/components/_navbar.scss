@@ -53,23 +53,21 @@
   font-family: "Bangers", cursive;
   letter-spacing: 3px;
 }
-.nav-log:hover{
- background: #d51d4c
-
+.nav-log:hover {
+  background: #d51d4c;
 }
 
 .welcome {
-width: 50px;
-position: relative;
-top: 24px;
-right: 30px;
-text-align: center;
-font-family: "Bangers", cursive;
-font-size: 21px;
--webkit-text-stroke: 0.8px grey;
-   color: white;
-   text-shadow:
-       2px 2px 0 #fd3a69;
+  width: 50px;
+  position: relative;
+  top: 24px;
+  right: 30px;
+  text-align: center;
+  font-family: "Bangers", cursive;
+  font-size: 21px;
+  -webkit-text-stroke: 0.8px grey;
+  color: white;
+  text-shadow: 2px 2px 0 #fd3a69;
 }
 
 // TOOOOOOOOOOOO small device
