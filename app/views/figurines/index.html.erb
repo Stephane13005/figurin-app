@@ -35,7 +35,7 @@
                   <%= link_to "⭐",   favorite_figurine_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
                   <% pre_like = figurine.likes.find { |like| like.user_id == current_user.id} %>
                   <% if pre_like %>
-                    <%= link_to "👎", figurine_like_path(figurine, pre_like),class: "btn btn-primary btn-sm", method: :delete %>
+                    <%= link_to "👎", figurine_like_path(figurine, pre_like),class: "btn btn-sm btn-outline-secondary", method: :delete %>
                   <% else %>
                     <%= link_to "👍", figurine_likes_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
                   <% end %>
