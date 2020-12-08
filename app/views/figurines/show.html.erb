@@ -19,15 +19,17 @@
   <hr>
   <div class="text-center">
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
+    <% if user_signed_in? %>
     <% pre_like = @figurine.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
       <%= link_to "👎", figurine_like_path(@figurine, pre_like), class: "btn btn-primary btn-sm", method: :delete %>
     <% else %>
       <%= link_to "👍", figurine_likes_path(@figurine), class: "btn btn-primary btn-sm", method: :post, redirect_to: figurine_path(@figurine), data: {confirm: "Wow! You like this figurine very much !"}%>
     <% end %>
-    <%= @figurine.likes.count %> <%= (@figurine.likes.count) == 1 ? 'Like' : 'Likes'%>
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '💬', figurine_path(anchor:"postreview")%></button>
     <%= link_to "⭐", favorite_figurine_path(@figurine), class: "btn btn-primary btn-sm", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
+    <% end %>
+    <%= @figurine.likes.count %> <%= (@figurine.likes.count) == 1 ? 'Like' : 'Likes'%>
   </div>
 </div>
 <div class="container text-center fig">
