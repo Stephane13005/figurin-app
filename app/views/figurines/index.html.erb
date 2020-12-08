@@ -32,7 +32,13 @@
               <div class="align-items-center">
                 <div class="text-center" id="star">
                   <%= link_to "⭐",   favorite_figurine_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
-                  <%= link_to "👍", figurines_path(anchor:"star"), class: "btn btn-sm btn-outline-secondary", data: {confirm: "Wow! You like this figurine very much !"}%>
+                  <% pre_like = figurine.likes.find { |like| like.user_id == current_user.id} %>
+                  <% if pre_like %>
+                    <%= button_to 'Unlike', figurine_likes_path(figurine, pre_like), method: :delete %>
+                  <% else %>
+                    <%= link_to "👍", figurine_likes_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
+                  <% end %>
+                  <%= figurine.likes.count %> <%= (figurine.likes.count) == 1 ? 'Like' : 'Likes'%>
                 </div>
               </div>
             </div>

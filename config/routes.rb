@@ -7,6 +7,7 @@ end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :figurines, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     put :favorite, on: :member
+    resources :likes, only: [:create, :index]
       resources :reviews, only: [ :new, :create ]
   	  	member do
   		get 'media'
