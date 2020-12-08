@@ -37,7 +37,7 @@
                   <% if pre_like %>
                     <%= link_to "👎", figurine_like_path(figurine, pre_like),class: "btn btn-sm btn-outline-secondary", method: :delete %>
                   <% else %>
-                    <%= link_to "👍", figurine_likes_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
+                    <%= link_to "👍", figurine_likes_path(figurine), class: "btn btn-sm btn-outline-secondary refresh-button", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
                   <% end %>
                   <% end %>
                   <%= figurine.likes.count %> <%= (figurine.likes.count) == 1 ? 'Like' : 'Likes'%>
