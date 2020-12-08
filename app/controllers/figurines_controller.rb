@@ -12,6 +12,15 @@ class FigurinesController < ApplicationController
     end
   end
 
+  def favorite
+    @favourite = Favourite.new
+    authorize @favourite
+    @favourite.figurine = policy_scope(Figurine).find(params[:id])
+    @favourite.user = current_user
+    @favourite.save
+  end
+
+
   def show
     @figurine = policy_scope(Figurine).find(params[:id])
     authorize @figurine
