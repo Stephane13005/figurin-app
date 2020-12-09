@@ -9,7 +9,7 @@
       <h1>Checkout summary</h1>
       <br>
       <p>Purchase of <strong><%= @order.figurine.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-purchase">Pay</button>
+      <button id="pay" type="button" class="btn btn-purchase">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
