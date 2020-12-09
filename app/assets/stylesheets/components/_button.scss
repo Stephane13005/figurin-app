@@ -28,6 +28,7 @@
   width: 230px;
   margin: 120px auto;
   font-family: "Bangers", cursive;
+
 }
 .collectors:hover{
   background: #0f3057
@@ -35,6 +36,7 @@
 .collectors a {
   text-decoration: none;
   color: white;
+
 }
 
 .carousel {
@@ -55,6 +57,7 @@
   text-align: center;
   font-family: "Bangers", cursive;
   letter-spacing:3px;
+  border: 2px solid black;
 }
 
 
@@ -81,6 +84,7 @@ font-size: 24px;
  margin-top: 40px;
  font-family: "Bangers", cursive;
  letter-spacing:3px;
+ border: 2px solid black;
 
 }
 .btn-purchase:hover {
@@ -104,6 +108,7 @@ font-size: 24px;
   transition: background 0.3s ease;
   border: 2px solid white;
   text-align: center;
+  border: 2px solid black;
 
 }
 
@@ -123,6 +128,7 @@ font-size: 24px;
   margin: 50px auto;
   letter-spacing: 3px;
   font-family: "Bangers", cursive;
+  border: 2px solid black;
 }
 
 .card-trip .btn-primary {
@@ -144,7 +150,7 @@ font-size: 24px;
 .coll {
   background: #008891;
 }
-
+.purchase a,
 .coll a,
 .media a {
   text-decoration: none;
@@ -161,6 +167,7 @@ font-size: 24px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
+  .btn-purchase ,
   .fig button {
     margin-top: 50px;
     display: block;

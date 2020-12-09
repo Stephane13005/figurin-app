@@ -5,6 +5,6 @@ class PagesController < ApplicationController
 
   def home
   	# raise if user_signed_in?
-    @figurine = Figurine.find(5)
+
   end
 end
