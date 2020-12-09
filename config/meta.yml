@@ -1,0 +1,5 @@
+meta_product_name: "Figurin'App"
+meta_title: "Figurin'App - An app for real collectors made by real collectors !"
+meta_description: "You collect figurines and you are tired of cold and boring marketplaces ? Figurin'App is made for you !"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@FigurinApp"   # required for Twitter Cards
