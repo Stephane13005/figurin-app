@@ -6,7 +6,7 @@
     <br>
     <div class="containeruser">
       <div class="user text-center" >
-        <div class="card card-profile shadow">
+        <div class="card card-profile">
           <h2 class="text-center"><strong><%= @profile.username %></strong></h2>
           <div class="columns">
             <div class="userimage text-center">
@@ -36,11 +36,14 @@
           <br>
           <button type="button" class=" btn btn-primary coll"><%= link_to "Add a figurine", new_figurine_path %></button>
         </div>
+        <div class="collectors">
+          <%= link_to "Collectors", profiles_path %>
+        </div>
       </div>
       <div id="droite">
         <div class="containeruser">
           <div class="user text-center" >
-            <div class="card card-profile shadow">
+            <div class="card card-profile">
               <h2 class="text-center"><strong>My trophies</strong></h2>
             </div>
           </div>
@@ -48,7 +51,7 @@
             <div class="trophies text-center">
               <div class="d-flex flex-wrap ">
                 <% @profile.user.figurines.each do |figurine| %>
-                  <div class="col-4 card-trophies">
+                  <div class="col-12 card-trophies">
                     <% if figurine.photo.attached? %>
                       <%= cl_image_tag(figurine.photo.key, :width => 200, :height =>300) %>
                     <% else %>
@@ -67,7 +70,7 @@
         <br>
         <div class="containeruser">
           <div class="user text-center" >
-            <div class="card card-profile shadow">
+            <div class="card card-profile">
               <h2 class="text-center"><strong>My favorites</strong></h2>
             </div>
           </div>

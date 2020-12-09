@@ -1,7 +1,6 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 50px;
   margin-bottom: 50px;
   grid-gap: 40px;
 }
@@ -20,10 +19,10 @@ img {
 }
 .img-checkout {
   padding: 7px;
-  border-radius:12%;
-  margin:auto;
+  border-radius: 12%;
+  margin: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 500px ;
+  height: 500px;
   width: 400px;
 }
 .card-category {
@@ -39,7 +38,6 @@ img {
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .image img {
@@ -52,7 +50,7 @@ img {
 
 .card-category:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 .cards a:hover {
   text-decoration: none;
@@ -69,7 +67,6 @@ img {
   width: 600px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-trip img {

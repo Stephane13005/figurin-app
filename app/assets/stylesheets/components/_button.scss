@@ -14,9 +14,6 @@
   font-family: "Bangers", cursive;
   letter-spacing: 3px;
 }
-.figurines:hover {
-  background-color: #0f3057;
-}
 
 // Ultra small
 @media (min-width: 320px) {
@@ -68,30 +65,18 @@
 }
 
 .collectors {
-  font-size: 36px;
-  padding: 10px 10px;
-  border-radius: 25px;
+  font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
   background: #008891;
-  border: 2px solid black;
   text-align: center;
-  width: 230px;
-  margin: 90px auto;
+  width: 180px;
+  margin: 20px auto;
   font-family: "Bangers", cursive;
+  letter-spacing: 2px;
+}
 
-}
-.collectors:hover {
-  background: #0f3057;
-}
 .collectors a {
-  text-decoration: none;
-  color: white;
-
-}
-
-.carousel {
-  margin-bottom: 70px;
-}
-.carousel a {
   text-decoration: none;
   color: white;
 }
@@ -102,45 +87,35 @@
   border-radius: 15px;
   background: #008891;
   transition: background 0.3s ease;
-  border: 2px solid white;
+  border: none;
   text-align: center;
   font-family: "Bangers", cursive;
-  letter-spacing:3px;
-  border: 2px solid black;
-
+  letter-spacing: 3px;
 }
-
 .btn-primary:hover {
-  background: #0f3057;
+  border: none;
 }
 
-
-.btn-purchase{
-color: white;
-font-size: 24px;
+.btn-purchase {
+  color: white;
   padding: 8px 8px;
   border-radius: 15px;
-  background: #fd3a69;
+  background: #e7e7de;
   transition: background 0.3s ease;
-  border: 2px solid white;
   text-align: center;
   display: block;
   font-size: 36px;
-  padding: 10px 10px;
-  border-radius: 15px;
-  text-align: center;
-  width: 400px;
+  width: 300px;
   margin: 50px auto;
- margin-top: 40px;
- font-family: "Bangers", cursive;
- letter-spacing:3px;
- border: 2px solid black;
+  margin-top: 40px;
+  font-family: "Bangers", cursive;
+  letter-spacing: 3px;
+}
 
-}
 .btn-purchase:hover {
-  background: #d51d4c;
-  color:white;
+  background: #e7e7de;
 }
+
 .btn-return a {
   text-decoration: none;
   color: white;
@@ -154,12 +129,10 @@ font-size: 24px;
   transition: background 0.3s ease;
   border: 2px solid white;
   text-align: center;
-
-  border: 2px solid black;
 }
 
 .btn-return:hover {
-  background: #0f3057;
+  background: #008891;
 }
 
 // button page of One Figurine buttons collector and media
@@ -170,26 +143,10 @@ font-size: 24px;
   padding: 10px 10px;
   border-radius: 15px;
   text-align: center;
-  width: 400px;
+  width: 300px;
   margin: 50px auto;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-family: "Bangers", cursive;
-  border: 2px solid black;
-}
-
-.btn-purchase {
-  color: white;
-  background: #fd3a69;
-  transition: background 0.3s ease;
-  display: block;
-  font-size: 36px;
-  width: 400px;
-  margin: 50px auto;
-  margin-top: 40px;
-}
-.btn-purchase:hover {
-  background: #d51d4c;
-  color: white;
 }
 
 .card-trip .btn-primary {
@@ -211,6 +168,12 @@ font-size: 24px;
 .coll {
   background: #008891;
 }
+.coll:hover {
+  background: #008891;
+}
+.comment:hover {
+  background: #008891;
+}
 .purchase a,
 .coll a,
 .media a {
@@ -222,13 +185,12 @@ font-size: 24px;
   background: #00587a;
   text-decoration: none;
 }
-
-.comm {
-  background: #e7e7de;
+.media:hover {
+  background: #00587a;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-  .btn-purchase ,
+  .btn-purchase,
   .fig button {
     margin-top: 50px;
     display: block;
@@ -236,18 +198,7 @@ font-size: 24px;
     padding: 10px 10px;
     border-radius: 15px;
     text-align: center;
-    width: 300px;
-    margin: 50px auto;
-  }
-
-  .btn-purchase {
-    margin-top: 50px;
-    display: block;
-    font-size: 36px;
-    padding: 10px 10px;
-    border-radius: 15px;
-    text-align: center;
-    width: 300px;
+    width: 200px;
     margin: 50px auto;
   }
 }

@@ -42,8 +42,8 @@
 </div>
 <br>
 <br>
-<div class="container text-center fig">
-  <button type="button" class="btn btn-primary comm" id="postreview">Comments</button>
+<div class="container text-center">
+  <h2 id="postreview">Comments</h2>
   <% if @figurine.reviews.blank? %>
     <p>Be the first to leave a comment for <%= @figurine.name %> figurine !</p>
   <% else %>
@@ -61,7 +61,7 @@
     <div class="container form">
       <%= simple_form_for([ @figurine, @review ]) do |f| %>
         <%= f.input :content %>
-        <%= f.submit "Submit your comment", class: "btn btn-primary" %>
+        <%= f.submit "Submit your comment", class: "btn btn-primary comment" %>
       <% end %>
     <% end %>
   </div>

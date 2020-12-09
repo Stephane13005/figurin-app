@@ -4,10 +4,9 @@
   <a href="#"><i class="fab fa-instagram-square fa-5x"></i></a>
   <a href="#"><i class="fab fa-twitter-square fa-5x"></i></a>
 </div>
-
 <h2 id="month">Month Figurin</h2>
-<div class="container card-trip card-category text-center box-shadow">
-    <% @popular.each do |like| %>
+<div class="container card-trip card-category text-center">
+  <% @popular.each do |like| %>
     <div>
       <div class="image">
         <% if like.figurine.photo.attached? %>
@@ -15,39 +14,37 @@
         <% else %>
           <%= image_tag("logo.png") %>
         <% end %>
-    </div>
-    <div class="text-center card-body">
+      </div>
+      <div class="text-center card-body">
         <h1 class="card-text"><%= link_to like.figurine.name, figurine_path(like.figurine) %></h1>
         <h1 class="card-text">Likes : <%= like.figurine.likes.count %></h1>
-    <% end %>
+      <% end %>
     </div>
-<br>
-</div>
-
-
-</div>
-  <h2 class="text-center" id= "apropos">About us</h2>
-  <hr>
-  <div class= "container apropos">
-    <p>Il y a quelques mois je classais les vieilles figurines Star Wars de ma marraine et voyant le peu d'infos que l'on peut trouver sur tous les sites type marketplace, je me suis dit qu'une application comme Figurin'App pouvait faire la différence : Un site pour les collectionneurs de figurines fait par des collectionneurs de figurines !</p>
-    <p>Made by Léonard, Emmanuel, Mathieu, et Stéphane from le Wagon !</p>
+    <br>
   </div>
-  <h2 class="text-center" id="contact">Contact us</h2>
-  <hr>
-  <form class= "container form">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Name</label>
-      <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
-      <small id="message" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="textarea">Message</label>
-      <textarea type="textarea" class="form-control" placeholder="Enter message" rows="8"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+</div>
+<h2 class="text-center" id= "apropos">About us</h2>
+<hr>
+<div class= "container apropos">
+  <p>Il y a quelques mois je classais les vieilles figurines Star Wars de ma marraine et voyant le peu d'infos que l'on peut trouver sur tous les sites type marketplace, je me suis dit qu'une application comme Figurin'App pouvait faire la différence : Un site pour les collectionneurs de figurines fait par des collectionneurs de figurines !</p>
+  <p>Made by Léonard, Emmanuel, Mathieu, et Stéphane from le Wagon !</p>
+</div>
+<h2 class="text-center" id="contact">Contact us</h2>
+<hr>
+<form class= "container form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email">
+    <small id="message" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="textarea">Message</label>
+    <textarea type="textarea" class="form-control" placeholder="Enter message" rows="8"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </div>
