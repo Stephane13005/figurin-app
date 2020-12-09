@@ -1,14 +1,10 @@
 <div class="text-center">
+  <br>
   <h1>Collectors list</h1>
   <br>
-  <div class="container text-center">
-    <div class="search">
-      <%= simple_form_for :figurines_filter, url: figurines_path(anchor:"fig-list"), method: :get do |f| %>
-        <%= f.input :search, label: false, value: params.dig(:figurines_filter, :search) %>
-        <%= f.submit "Search", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+  <%= form_tag figurines_path(anchor:"fig-list"), method: :get, class: "search" do %>
+    <%= text_field_tag :query, params[:query], class: "form", placeholder: "Find a figurine" %> <%= submit_tag "Search...", class: "btn btn-primary" %>
+  <% end %>
   <div class="cards container" id="fig-list">
     <% @profiles.each do |profile| %>
       <ul>

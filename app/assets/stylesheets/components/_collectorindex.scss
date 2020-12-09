@@ -55,7 +55,7 @@
 }
 
 .containeruser {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 #contenu {
@@ -96,10 +96,18 @@
   height: 400px;
   overflow-y: scroll;
 }
-a {
+.card-text a {
   color: #008891;
+}
+.card-text a:hover {
   text-decoration: none;
 }
-a:hover {
+
+.card-trophies a {
+  color: #008891;
+}
+
+.card-trophies a:hover {
+  color: #008891;
   text-decoration: none;
 }

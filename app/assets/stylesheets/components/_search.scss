@@ -1,3 +1,7 @@
+.search form {
+  display: inline-block;
+}
+
 .search input {
   width: 600px;
   margin: 0 auto;
@@ -6,15 +10,18 @@
 }
 
 .search .btn {
-  margin-top: 20px;
-  width: 300px;
+  width: 200px;
   font-family: "Bangers", cursive;
   letter-spacing: 3px;
+  height: 3rem;
+}
+
+.search .btn:hover {
+  background: #008891;
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 100px) and (max-width: 575px) {
-
   .search input {
     width: 250px;
     margin: 0 auto;
