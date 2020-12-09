@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_104800) do
+ActiveRecord::Schema.define(version: 2020_12_08_140555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_104800) do
     t.integer "media_year"
     t.string "media_universe"
     t.integer "price_cents", default: 0, null: false
+    t.integer "likes_count"
     t.index ["user_id"], name: "index_figurines_on_user_id"
   end
 

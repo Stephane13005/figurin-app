@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   after_action :verify_policy_scoped, except: :home, unless: :devise_controller?
 
   def home
-  	# raise if user_signed_in?
-
+  	@popular = Like.popular
   end
 end
