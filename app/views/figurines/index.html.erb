@@ -12,9 +12,9 @@
   %>
         <%= submit_tag "Search...", class: "btn btn-primary" %>
       <% end %>
-         <div class="collectors">
-    <%= link_to "Collectors", profiles_path %>
-  </div>
+      <div class="collectors">
+        <%= link_to "Collectors", profiles_path %>
+      </div>
     </div>
   </div>
   <div class="cards container" id="fig-list">
@@ -33,14 +33,14 @@
               <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
               <p class="card-text"><%= figurine.year %> - <%= humanized_money_with_symbol(figurine.price) %></p>
               <div class="align-items-center">
-                <div class="text-center" id="star">
+                <div class="text-center" id="like">
                   <% if user_signed_in? %>
                     <%= link_to "⭐",   favorite_figurine_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
                     <% pre_like = figurine.likes.find { |like| like.user_id == current_user.id} %>
                     <% if pre_like %>
-                      <%= link_to "👎", figurine_like_path(figurine, pre_like),class: "btn btn-sm btn-outline-secondary", method: :delete %>
+                      <%= link_to "👎", figurine_like_path(figurine, pre_like, :anchor => "like"),class: "btn btn-sm btn-outline-secondary", method: :delete %>
                     <% else %>
-                      <%= link_to "👍", figurine_likes_path(figurine), class: "btn btn-sm btn-outline-secondary refresh-button", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
+                      <%= link_to "👍", figurine_likes_path(figurine , :anchor => "like"), class: "btn btn-sm btn-outline-secondary refresh-button", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
                     <% end %>
                   <% end %>
                   <%= figurine.likes.count %> <%= (figurine.likes.count) == 1 ? 'Like' : 'Likes'%>

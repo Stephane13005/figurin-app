@@ -20,14 +20,14 @@
     </div>
   </div>
   <hr>
-  <div class="text-center">
+  <div class="text-center" id="likes">
     <button type="button" class="btn btn-primary btn-sm"><%= link_to '🔙', figurines_path%></button>
     <% if user_signed_in? %>
       <% pre_like = @figurine.likes.find { |like| like.user_id == current_user.id} %>
       <% if pre_like %>
-        <%= link_to "👎", figurine_like_path(@figurine, pre_like), class: "btn btn-primary btn-sm", method: :delete %>
+        <%= link_to "👎", figurine_like_path(@figurine, pre_like, :anchor => "likes"), class: "btn btn-primary btn-sm", method: :delete %>
       <% else %>
-        <%= link_to "👍", figurine_likes_path(@figurine), class: "btn btn-primary btn-sm", method: :post, redirect_to: figurine_path(@figurine), data: {confirm: "Wow! You like this figurine very much !"} %>
+        <%= link_to "👍", figurine_likes_path(@figurine, :anchor => "likes"), class: "btn btn-primary btn-sm", method: :post, redirect_to: figurine_path(@figurine), data: {confirm: "Wow! You like this figurine very much !"} %>
       <% end %>
       <button type="button" class="btn btn-primary btn-sm"><%= link_to '💬', figurine_path(anchor:"postreview")%></button>
       <%= link_to "⭐", favorite_figurine_path(@figurine), class: "btn btn-primary btn-sm", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
