@@ -1,4 +1,7 @@
 <div class="container card-trip mediapage text-center">
+<% content_for :meta_title, "#{@figurine.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, humanized_money_with_symbol(@figurine.price), @figurine.description %>
+<% content_for :meta_image, cl_image_path(@figurine.photo.path) %>
   <h1 class="text-center"><%= @figurine.name %></h1>
   <% if @figurine.photo.attached? %>
     <%= cl_image_tag(@figurine.photo.key) %>
