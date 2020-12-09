@@ -1,8 +1,9 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 50px;
-  grid-gap: 40px;
+  grid-gap: 16px;
+  padding: 75px;
 }
 
 .cards ul {
