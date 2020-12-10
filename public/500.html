@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The page you were looking for doesn't exist (404)</title>
+    <title>Server error (500)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -9,17 +9,17 @@
       rel="stylesheet"
     />
     <style>
-      img {width: 1430px;
-height: 800px;
-
+      img {
+         max-width: 100%;
+        height: auto;
       }
 
-      .dialog {
-        padding-left:10%;
+      .dialog500 {
+        padding-left:22%;
         position: absolute;
         top: 10px;
         color: black;
-        font-family: "Aladin";
+        font-family: "Bangers";
         font-style: normal;
         font-weight: normal;
         font-size: 30px;
@@ -32,11 +32,9 @@ height: 800px;
     </style>
   </head>
 
-  <body class="rails-default-error-page">
-    <!-- This file lives in public/404.html -->
     <img src="assets/gandalf2.png" />
-    <div class="dialog">
-      <h1 class="text-center">Technical error run away poor fool!!!</h1>
+    <div class="dialog500">
+      <h1>Technical error run away poor fool!!!</h1>
 
 
 
