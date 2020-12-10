@@ -24,7 +24,7 @@
         </div>
         <div class="text-center">
           <br>
-          <button type="button" class=" btn btn-primary coll"><%= link_to "Add a figurine", new_figurine_path %></button>
+          <button type="button" class=" btn btn-primary add"><%= link_to "Add a figurine", new_figurine_path %></button>
         </div>
         <div class="text-center">
           <button type="button" class="collectors btn btn-primary coll"><%= link_to "Collectors", profiles_path %></button>
@@ -41,9 +41,8 @@
                 <% else %>
                   <%= image_tag("logo.png", size: "200x237")%>
                 <% end %>
-                <h5><%= link_to figurine.name, figurine_path(figurine) %></h5>
-                <%= link_to "⚙️", edit_figurine_path(figurine) %> |
-                <%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
+                <h3><%= link_to figurine.name, figurine_path(figurine) %></h3>
+                <%= link_to "⚙️", edit_figurine_path(figurine) %><%= link_to "🗑", figurine_path(figurine), method: :delete, data: {confirm: "Are you sure ?"} %>
               </div>
             <% end %>
           </div>
@@ -60,7 +59,7 @@
                 <% else %>
                   <%= image_tag("logo.png", size: "200x300")%>
                 <% end %>
-                <h5><%= link_to favorite.figurine.name, figurine_path(favorite.figurine) %></h5>
+                <h3><%= link_to favorite.figurine.name, figurine_path(favorite.figurine) %></h3>
                 <%= link_to "🗑", favourite_path(favorite), method: :delete, data: {confirm: "Are you sure ?"} %>
               </div>
             <% end %>

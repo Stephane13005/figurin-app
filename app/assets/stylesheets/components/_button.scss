@@ -100,20 +100,20 @@
   color: white;
   padding: 8px 8px;
   border-radius: 15px;
-  background: #e7e7de;
+  background: #008891;
   transition: background 0.3s ease;
   text-align: center;
   display: block;
   font-size: 36px;
   width: 300px;
   margin: 50px auto;
-  margin-top: 40px;
+  margin-top: 15px;
   font-family: "Bangers", cursive;
   letter-spacing: 3px;
 }
 
 .btn-purchase:hover {
-  background: #e7e7de;
+  background: #008891;
 }
 
 .btn-return a {
@@ -138,13 +138,13 @@
 // button page of One Figurine buttons collector and media
 .fig button {
   margin-top: 50px;
-  display: block;
+  display: inline-block;
   font-size: 36px;
   padding: 10px 10px;
   border-radius: 15px;
   text-align: center;
   width: 300px;
-  margin: 50px auto;
+  margin: 40px 20px;
   letter-spacing: 2px;
   font-family: "Bangers", cursive;
 }
@@ -165,18 +165,33 @@
   color: white;
 }
 
-.coll {
+.add {
+  font-size: 24px;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background: #008891;
+  text-align: center;
+  width: 180px;
+  margin: 20px auto;
+  font-family: "Bangers", cursive;
+  letter-spacing: 2px;
+}
+.add:hover {
   background: #008891;
 }
+.coll {
+  background: #e7e7de;
+}
 .coll:hover {
-  background: #008891;
+  background: #e7e7de;
 }
 .comment:hover {
   background: #008891;
 }
 .purchase a,
 .coll a,
-.media a {
+.media a,
+.add a {
   text-decoration: none;
   color: white;
 }
