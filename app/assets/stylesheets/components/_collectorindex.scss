@@ -47,6 +47,7 @@
 
 .containeruser {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 #contenu {
@@ -74,17 +75,17 @@
 .trophies {
   padding-top: 20px;
   padding-bottom: 20px;
-  height: 800px;
+  height: 900px;
 }
 .favories {
   padding-top: 20px;
   padding-bottom: 20px;
-  height: 800px;
+  height: 900px;
 }
 
 .scroller {
   width: auto;
-  height: 600px;
+  height: 800px;
   overflow-y: scroll;
 }
 .card-text a {
@@ -94,11 +95,12 @@
   text-decoration: none;
 }
 .card-trophies {
-  height: 350px;
+  height: 370px;
   padding: 0;
 }
 .card-trophies a {
   color: #008891;
+  font-size: 1rem;
 }
 
 .card-trophies img {
