@@ -8,8 +8,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    authorize @user
+    @profile = Profile.find(params[:id])
+    authorize @profile
   end
 
   def profile
