@@ -1,13 +1,13 @@
 class LikesController < ApplicationController
-    before_action :find_figurine
-    before_action :find_like, only: [:destroy]
+  before_action :find_figurine
+  before_action :find_like, only: [:destroy]
 
   def create
     if already_liked?
       flash[:notice] = "You can't like more than once"
     else
       @figurine.likes.create(user_id: current_user.id)
-       redirect_back(fallback_location: :back)
+      redirect_back(fallback_location: :back)
     end
   end
 
@@ -16,14 +16,14 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if !(already_liked?)
+    if !already_liked?
       flash[:notice] = "Cannot unlike"
     else
       @like.destroy
       redirect_back(fallback_location: :back)
     end
   end
-  
+
   private
 
   def already_liked?
@@ -34,5 +34,4 @@ class LikesController < ApplicationController
   def find_figurine
     @figurine = Figurine.find(params[:figurine_id])
   end
-
 end

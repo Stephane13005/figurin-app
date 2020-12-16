@@ -20,7 +20,6 @@ class FigurinesController < ApplicationController
     @favourite.save
   end
 
-
   def show
     @figurine = policy_scope(Figurine).find(params[:id])
     authorize @figurine

@@ -6,7 +6,7 @@ class FavouritePolicy < ApplicationPolicy
   end
 
   def favorite?
-  	true
+    true
   end
 
   def destroy?
