@@ -11,9 +11,7 @@ class ReviewPolicy < ApplicationPolicy
 
   private
 
-
   def is_owner?
     user == record.user
   end
-
 end

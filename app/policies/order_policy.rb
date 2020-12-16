@@ -6,10 +6,10 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def create?
-  	true
+    true
   end
 
   def show?
-  	true
+    true
   end
 end

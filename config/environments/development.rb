@@ -63,5 +63,5 @@ Rails.application.configure do
 
   Rails.application.configure do
   config.hosts.clear
-end
+  end
 end

@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
-	def create
+  def create
     @review = Review.new(review_params)
     @review.user = current_user
     @review.figurine = policy_scope(Figurine).find(params[:figurine_id])
     if @review.save
-      redirect_to figurine_path(@review.figurine, anchor:"review-#{@review.id}")
+      redirect_to figurine_path(@review.figurine, anchor: "review-#{@review.id}")
     else
-	    render 'figurines/show'
+      render 'figurines/show'
     end
   end
 
