@@ -1,15 +1,11 @@
-class OrderPolicy < ApplicationPolicy
+class PaymentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def create?
-  	true
-  end
-
-  def show?
+  def new?
   	true
   end
 end
