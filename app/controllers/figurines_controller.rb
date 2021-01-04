@@ -85,6 +85,7 @@ class FigurinesController < ApplicationController
   private
 
   def figurine_params
-    params.require(:figurine).permit(:name, :description, :year, :brand, :media_universe, :media_year, :price_cents, :photo)
+    params.require(:figurine).permit(:name, :description, :year, :brand, :media_universe, :media_year, :price_cents,
+                                     :photo)
   end
 end

@@ -16,11 +16,11 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if !already_liked?
-      flash[:notice] = "Cannot unlike"
-    else
+    if already_liked?
       @like.destroy
       redirect_back(fallback_location: :back)
+    else
+      flash[:notice] = "Cannot unlike"
     end
   end
 

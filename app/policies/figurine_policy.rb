@@ -22,7 +22,7 @@ class FigurinePolicy < ApplicationPolicy
   end
 
   def buy?
-    !is_owner?
+    record.user != user
   end
 
   def update?

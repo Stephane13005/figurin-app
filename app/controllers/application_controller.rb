@@ -18,7 +18,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :username) }
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password, :username) }
+    devise_parameter_sanitizer.permit(:account_update) do |u|
+      u.permit(:email, :password, :password_confirmation, :current_password, :username)
+    end
   end
 
   def set_user
