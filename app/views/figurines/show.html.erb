@@ -53,16 +53,21 @@
         <p><%= review.created_at %> </p>
         <div class="card-trip-infos">
           <p id="review-<%= review.id %>"><%= review.content %> </p>
+            <% if policy(review).destroy? %>
+          <p> <%= link_to "🗑", review_path(review), method: :delete, data: {confirm: "Are you sure ?"} %></p>
+          <% end %>
         </div>
       </div>
     <% end %>
   <% end %>
+  <% if user_signed_in? %>
   <% if policy(@review).create? %>
     <div class="container form">
       <%= simple_form_for([ @figurine, @review ]) do |f| %>
         <%= f.input :content %>
         <%= f.submit "Submit your comment", class: "btn btn-primary comment" %>
       <% end %>
+    <% end %>
     <% end %>
   </div>
 </div>

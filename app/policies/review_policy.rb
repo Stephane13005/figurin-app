@@ -6,12 +6,11 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    !is_owner?
+    true
   end
 
-  private
-
-  def is_owner?
-    user == record.user
+  def destroy?
+    record.user == user
   end
+
 end
