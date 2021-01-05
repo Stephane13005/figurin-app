@@ -1,19 +1,58 @@
 .button {
   text-align: center;
 }
+
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 380px) {
   .img-checkout,
   .cards {
     grid-template-columns: 1fr;
   }
+  .card-trophies {
+    width: 250px;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .trophies,
+  .favories {
+    padding-left: 0px !important;
+  }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+// Smallest device
+@media (min-width: 381px) and (max-width: 575px) {
   .img-checkout,
   .cards {
     grid-template-columns: 1fr;
+  }
+  .card-trophies {
+    width: 300px;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .trophies,
+  .favories {
+    padding-left: 0px !important;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+  .img-checkout,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card-trophies {
+    width: 250px;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .trophies,
+  .favories {
+    padding-left: 0px !important;
   }
 }
 
