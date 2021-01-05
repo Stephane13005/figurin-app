@@ -74,6 +74,9 @@
 
 // TOOOOOOOOOOOO small device
 @media (min-width: 100px) and (max-width: 345px) {
+  .navbar-lewagon {
+    height: 140px;
+  }
   .navbar-lewagon .navbar-brand {
     padding: 4px;
     margin: 4px;
@@ -87,10 +90,34 @@
     height: 40px;
     font-size: 8px;
   }
+  .welcome {
+    width: 20px;
+    top: 12px;
+    font-size: 15px;
+    position: absolute;
+    margin-top: 40px;
+    top: 50px;
+    right: 60%;
+  }
+  .navbar-lewagon .avatar {
+    position: absolute;
+    margin-top: -40px;
+    right: 30%;
+  }
+
+  .dropdown {
+    position: absolute;
+    margin-top: 20px;
+    z-index: 1000;
+    right: 28%;
+  }
 }
 
 // Ultra small device
 @media (min-width: 345px) and (max-width: 395px) {
+  .navbar-lewagon {
+    height: 140px;
+  }
   .navbar-lewagon .navbar-brand {
     padding: 5px;
     margin: 5px;
@@ -104,10 +131,35 @@
     height: 50px;
     font-size: 10px;
   }
+  .welcome {
+    width: 20px;
+    top: 12px;
+    font-size: 15px;
+    position: absolute;
+    margin-top: 40px;
+    top: 50px;
+    right: 60%;
+  }
+  .navbar-lewagon .avatar {
+    position: absolute;
+    margin-top: -40px;
+    right: 30%;
+  }
+
+  .dropdown {
+    position: absolute;
+    margin-top: 20px;
+    z-index: 1000;
+    right: 28%;
+  }
 }
 
 // Super small device
 @media (min-width: 395px) and (max-width: 590px) {
+  .navbar-lewagon {
+    height: 140px;
+  }
+
   .navbar-lewagon .navbar-brand {
     padding: 6px;
     margin: 6px;
@@ -120,6 +172,27 @@
     width: 60px;
     height: 60px;
     font-size: 10px;
+  }
+  .welcome {
+    width: 20px;
+    top: 12px;
+    font-size: 15px;
+    position: absolute;
+    margin-top: 40px;
+    top: 50px;
+    right: 60%;
+  }
+  .navbar-lewagon .avatar {
+    position: absolute;
+    margin-top: -40px;
+    right: 35%;
+  }
+
+  .dropdown {
+    position: absolute;
+    margin-top: 20px;
+    z-index: 1000;
+    right: 35%;
   }
 }
 
@@ -203,57 +276,10 @@
   }
 }
 
-// TOOOOOOOOOOOO small device
-@media (min-width: 100px) and (max-width: 345px) {
-}
-
-// Ultra small device
-@media (min-width: 345px) and (max-width: 395px) {
-}
-
-// Super small device
-@media (min-width: 395px) and (max-width: 590px) {
-}
-
-// Smallest device
-@media (min-width: 590px) and (max-width: 610px) {
-}
-
-@media (min-width: 610px) and (max-width: 760px) {
-}
-
-@media (min-width: 760px) and (max-width: 820px) {
-}
-
-@media (min-width: 820px) {
-}
-
-@media (min-width: 100px) and (max-width: 590px) {
-  .welcome {
-    width: 15px;
-    top: 15px;
-    font-size: 15px;
-  }
-}
-
-// Smallest device
-@media (min-width: 590px) and (max-width: 610px) {
-}
-
-@media (min-width: 610px) and (max-width: 760px) {
-}
-
 // Smallest device
 @media (min-width: 100px) and (max-width: 610px) {
   .navbar-lewagon img {
     width: 60px;
     height: 60px;
   }
-}
-
-// Smallest device
-@media (min-width: 590px) and (max-width: 610px) {
-}
-
-@media (min-width: 610px) and (max-width: 760px) {
 }
