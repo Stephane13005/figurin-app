@@ -33,7 +33,9 @@
   </div>
 </div>
 <div class="container text-center fig">
+  <% if policy(@figurine).profile? %>
   <button type="button" class="btn btn-primary coll"><%= link_to "Collector", profile_path(@figurine.user) %></button>
+  <% end %>
   <button type="button" class="btn btn-primary media"><%= link_to "Media", media_figurine_path(@figurine) %></button>
 
   <%= form_tag orders_path do %>
