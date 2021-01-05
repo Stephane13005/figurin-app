@@ -26,7 +26,7 @@
     <h2><strong>My trophies</strong></h2>
     <div class="scroller trophies d-flex flex-wrap">
       <% @profile.user.figurines.each do |figurine| %>
-        <div class="col-12 card-trophies">
+        <div class="card-trophies">
           <% if figurine.photo.attached? %>
             <%= cl_image_tag(figurine.photo.key) %>
           <% else %>
@@ -42,7 +42,7 @@
     <h2><strong>My favorites</strong></h2>
     <div class="scroller favories d-flex flex-wrap">
       <% @profile.user.favourites.each do |favorite| %>
-        <div class="col-4 card-trophies">
+        <div class="card-trophies">
           <% if favorite.figurine.photo.attached? %>
             <%= cl_image_tag(favorite.figurine.photo.key) %>
           <% else %>
