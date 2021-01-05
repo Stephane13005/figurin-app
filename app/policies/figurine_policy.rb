@@ -18,7 +18,7 @@ class FigurinePolicy < ApplicationPolicy
   end
 
   def profile?
-    true
+    record.user != user
   end
 
   def buy?
