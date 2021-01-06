@@ -3,7 +3,7 @@
   <h1>Figurines list</h1>
   <br>
   <%= form_tag figurines_path(anchor:"fig-list"), method: :get, class: "search" do %>
-    <%= text_field_tag :query, params[:query], class: "form", placeholder: "Find a figurine" %> <%= submit_tag "Search...", class: "btn btn-primary" %>
+    <%= text_field_tag :query, params[:query], class: "form", placeholder: "Find a figurine" %> <%= submit_tag "Search...", class: "btn btn-primary search-button" %>
   <% end %>
   <div class="cards container" id="fig-list">
     <% @figurines.each do |figurine| %>
