@@ -3,41 +3,43 @@
   <h1>Figurines list</h1>
   <br>
   <%= form_tag figurines_path(anchor:"fig-list"), method: :get, class: "search" do %>
-    <%= text_field_tag :query, params[:query], class: "form", placeholder: "Find a figurine" %> <%= submit_tag "Search...", class: "btn btn-primary search-button" %>
+  <%= text_field_tag :query, params[:query], class: "form", placeholder: "Find a figurine" %> <%= submit_tag "Search...", class: "btn btn-primary search-button" %>
   <% end %>
+
   <div class="cards container" id="fig-list">
-    <% @figurines.each do |figurine| %>
-      <ul id="like-<%= figurine.id %>">
-        <div class="card-category container">
-          <div class="image">
-            <div>
-              <% if figurine.photo.attached? %>
-                <%= cl_image_tag(figurine.photo.key) %>
-              <% else %>
-                <%= image_tag("logo.png") %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
-              <p class="card-text"><%= figurine.year %> - <%= humanized_money_with_symbol(figurine.price) %></p>
-              <div class="align-items-center">
-                <div class="text-center">
-                  <% if user_signed_in? %>
-                    <%= link_to "⭐", favorite_figurine_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
-                    <% pre_like = figurine.likes.find { |like| like.user_id == current_user.id} %>
-                    <% if pre_like %>
-                      <%= link_to "👎", figurine_like_path(figurine, pre_like, :anchor => "like-#{figurine.id}"), class: "btn btn-sm btn-outline-secondary", method: :delete %>
-                    <% else %>
-                      <%= link_to "👍", figurine_likes_path(figurine, :anchor => "like-#{figurine.id}") , class: "btn btn-sm btn-outline-secondary refresh-button", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
-                    <% end %>
-                  <% end %>
-                  <%= figurine.likes.count %> <%= (figurine.likes.count) == 1 ? 'Like' : 'Likes'%>
-                </div>
+    <% @figurines_list.each do |figurine| %>
+    <ul id="like-<%= figurine.id %>">
+      <div class="card-category container">
+        <div class="image">
+          <div>
+            <% if figurine.photo.attached? %>
+            <%= cl_image_tag(figurine.photo.key) %>
+            <% else %>
+            <%= image_tag("logo.png") %>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= link_to figurine.name, figurine_path(figurine) %></p>
+            <p class="card-text"><%= figurine.year %> - <%= humanized_money_with_symbol(figurine.price) %></p>
+            <div class="align-items-center">
+              <div class="text-center">
+                <% if user_signed_in? %>
+                <%= link_to "⭐", favorite_figurine_path(figurine), class: "btn btn-sm btn-outline-secondary", method: :put, data: {confirm: "Awesome! This figurine has been added to your favourites !"}%>
+                <% pre_like = figurine.likes.find { |like| like.user_id == current_user.id} %>
+                <% if pre_like %>
+                <%= link_to "👎", figurine_like_path(figurine, pre_like, :anchor => "like-#{figurine.id}"), class: "btn btn-sm btn-outline-secondary", method: :delete %>
+                <% else %>
+                <%= link_to "👍", figurine_likes_path(figurine, :anchor => "like-#{figurine.id}") , class: "btn btn-sm btn-outline-secondary refresh-button", method: :post, redirect_to: figurines_path, data: {confirm: "Wow! You like this figurine very much !"}%>
+                <% end %>
+                <% end %>
+                <%= figurine.likes.count %> <%= (figurine.likes.count) == 1 ? 'Like' : 'Likes'%>
               </div>
             </div>
-          </ul>
+          </div>
+        </ul>
         <% end %>
       </div>
+<%= paginate @figurines_list %>
       <div class="container text-center">
         <button type="button" class="btn btn-return"><%= link_to "Return", root_path %></button>
       </div>

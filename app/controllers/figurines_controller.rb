@@ -5,11 +5,13 @@ class FigurinesController < ApplicationController
 
   def index
     @figurines = policy_scope(Figurine).order(created_at: :desc)
+
     if params[:query].present?
       @figurines = Figurine.search_by(params[:query])
     else
       @figurines = Figurine.all
     end
+    @figurines_list = Kaminari.paginate_array(@figurines).page(params[:page]).per(9)
   end
 
   def favorite

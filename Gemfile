@@ -38,6 +38,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'stripe'
 gem 'stripe_event'
 gem 'money-rails'
+gem 'kaminari'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
