@@ -39,6 +39,7 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'money-rails'
 gem 'kaminari'
+gem 'postmark-rails'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
