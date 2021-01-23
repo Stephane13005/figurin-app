@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   devise_for :users
   devise_scope :user do
