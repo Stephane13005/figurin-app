@@ -8,7 +8,6 @@ index do
     column :year
     column :brand
     column :description
-    column :like
     column :media_title
     column :media_universe
     column :price_cents
