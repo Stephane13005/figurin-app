@@ -40,6 +40,8 @@ gem 'stripe_event'
 gem 'money-rails'
 gem 'kaminari'
 gem 'postmark-rails'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
