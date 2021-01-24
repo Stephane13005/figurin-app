@@ -1,6 +1,5 @@
 ActiveAdmin.register Figurine do
-
-index do
+  index do
     selectable_column
     column :id
     column :user
@@ -11,10 +10,13 @@ index do
     column :media_title
     column :media_universe
     column :price_cents
+    column :photo do |figurine|
+      figurine.photo.attached?
+    end
     actions
   end
 
- form do |f|
+  form do |f|
     f.inputs "Figurine" do
       f.input :name
       f.input :year
@@ -40,5 +42,4 @@ index do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-
 end

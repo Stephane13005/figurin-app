@@ -1,5 +1,5 @@
 class TestMailer < ApplicationMailer
- default from: 'admin@figurinapp.com'
+  default from: 'admin@figurinapp.com'
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -7,12 +7,13 @@ class TestMailer < ApplicationMailer
   #   en.test_mailer.hello.subject
   #
   def hello
-     mail(
+    mail(
       subject: 'Hello from Postmark',
       to: 'severio.stephane@gmail.com',
       from: 'admin@figurinapp.com',
       html_body: '<strong>Hello</strong> dear Postmark user.',
       track_opens: 'true',
-      message_stream: 'outbound')
+      message_stream: 'outbound'
+    )
   end
 end

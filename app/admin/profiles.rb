@@ -1,6 +1,19 @@
 ActiveAdmin.register Profile do
+  index do
+    selectable_column
+    column :id
+    column :username
+    column :firstname
+    column :lastname
+    column :birthdate
+    column :city
+    column :photo do |profile|
+      profile.photo.attached?
+    end
+    actions
+  end
 
-   form do |f|
+  form do |f|
     f.inputs "Identity" do
       f.input :username
       f.input :firstname
@@ -25,5 +38,4 @@ ActiveAdmin.register Profile do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-
 end
